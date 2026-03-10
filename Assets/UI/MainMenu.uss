@@ -1,0 +1,44 @@
+.panel {
+    background-color: rgb(60, 59, 59);
+    align-items: flex-start;
+    border-left-width: 0;
+}
+
+.menu {
+}
+
+.unity-button {
+    flex-grow: 0.1;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-content: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 19px;
+    translate: 0 293px;
+    background-color: rgb(118, 165, 180);
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-color: rgb(52, 120, 147);
+    border-right-color: rgb(52, 120, 147);
+    border-bottom-color: rgb(52, 120, 147);
+    border-left-color: rgb(52, 120, 147);
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.unity-button:hover {
+    background-color: rgb(52, 120, 147);
+    scale: 1.15 1.1;
+    transition-property: scale;
+    transition-duration: 0.2s;
+}
+
+.unity-button:hover:active {
+    background-color: rgb(52, 120, 147);
+    scale: 0.95 0.9;
+    transition-property: scale;
+    transition-duration: 0.2s;
+}

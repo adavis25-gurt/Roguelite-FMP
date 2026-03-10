@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=7e9640eea530e744c933ac2b536db794&amp;type=3#MainMenu" />
+    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1;">
+        <ui:VisualElement name="Container" class="menu" style="flex-grow: 1; background-color: rgb(31, 31, 31); width: 578px; align-items: stretch;">
+            <ui:Button text="Story Mode" name="StoryButton" class="unity-button" style="font-size: 30px; -unity-font-style: bold;" />
+            <ui:Button text="Endless Mode" name="EndlessButton" class="unity-button" style="font-size: 30px; -unity-font-style: bold;" />
+            <ui:Button text="Settings" name="SettingsButton" class="unity-button" style="font-size: 30px; -unity-font-style: bold;" />
+            <ui:Button text="Exit" name="ExitButton" class="unity-button" style="font-size: 30px; -unity-font-style: bold;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
