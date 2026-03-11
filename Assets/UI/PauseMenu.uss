@@ -1,0 +1,10 @@
+.panel {
+}
+
+.menu {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.67);
+    align-content: flex-start;
+    -unity-background-scale-mode: stretch-to-fill;
+    scale: 0.3 1;
+}

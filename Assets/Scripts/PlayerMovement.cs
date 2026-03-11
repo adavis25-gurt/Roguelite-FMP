@@ -4,6 +4,7 @@ using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -38,9 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("OnJump called");
-        Debug.Log("Grounded: " + IsGrounded());
-
         if (!IsGrounded()) return;
         playerRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
     }
@@ -56,25 +54,6 @@ public class PlayerMovement : MonoBehaviour
             groundLayer
         );
     }
-
-    void OnDrawGizmos()
-{
-    if (groundCheck == null) return;
-
-    // Change color based on whether we're grounded or not
-    // Green = grounded, Red = not grounded
-    Gizmos.color = IsGrounded() ? Color.green : Color.red;
-
-    // Draw a wire sphere at the start of the cast (where it begins)
-    Gizmos.DrawWireSphere(groundCheck.transform.position, groundCheckRadius);
-
-    // Draw a wire sphere at the end of the cast (how far down it reaches)
-    // This shows you the full range the SphereCast sweeps through
-    Gizmos.DrawWireSphere(groundCheck.transform.position + Vector3.down * groundCheckRadius, groundCheckRadius);
-
-    // Draw a line connecting them so you can see the cast direction clearly
-    Gizmos.DrawLine(groundCheck.transform.position, groundCheck.transform.position + Vector3.down * groundCheckRadius);
-}
 
     void FixedUpdate()
     {

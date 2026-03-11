@@ -27,6 +27,8 @@
     border-left-color: rgb(52, 120, 147);
     margin-right: 50px;
     margin-left: 50px;
+    -unity-font-definition: url("project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&guid=b6db1521497d36546be41a6c0a53da86&type=3#munro-small");
+    font-size: 50px;
 }
 
 .unity-button:hover {
