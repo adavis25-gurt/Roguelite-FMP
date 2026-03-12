@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
         jumpAction = playerInput.actions.FindAction("Jump");
 
         jumpAction.performed += OnJump;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void OnDestroy()
