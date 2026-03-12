@@ -1,36 +1,32 @@
-using System.Xml;
-using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    PlayerInput playerInput;
-    InputAction moveAction;
-    InputAction jumpAction;
-
-    [SerializeField] float moveSpeed;
-    [SerializeField] float jumpPower;
+    [Header("Ground Check")]
     [SerializeField] float groundCheckRadius = 0.3f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] GameObject groundCheck;
     [SerializeField] Transform orientation;
 
+    [Header("Fall Gravity")]
+    [SerializeField] float fallMultiplier = 3f;
+    [SerializeField] float airControlMultiplier = 0.1f;
+
+    PlayerInput playerInput;
+    InputAction moveAction;
+    InputAction jumpAction;
     Rigidbody playerRigidbody;
+
+    int jumpsRemaining;
 
     void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
         jumpAction = playerInput.actions.FindAction("Jump");
-
         jumpAction.performed += OnJump;
-
         DontDestroyOnLoad(gameObject);
     }
 
@@ -41,8 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputAction.CallbackContext context)
     {
-        if (!IsGrounded()) return;
-        playerRigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        if (jumpsRemaining <= 0) return;
+        playerRigidbody.linearVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0f, playerRigidbody.linearVelocity.z);
+        playerRigidbody.AddForce(Vector3.up * CharacterStats.Instance.jumpPower.GetValue(), ForceMode.Impulse);
+        jumpsRemaining--;
     }
 
     bool IsGrounded()
@@ -59,8 +57,15 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        HandleGrounding();
         MovePlayer();
-        print(IsGrounded());
+        ApplyFallGravity();
+    }
+
+    void HandleGrounding()
+    {
+        if (IsGrounded())
+            jumpsRemaining = Mathf.RoundToInt(CharacterStats.Instance.jumpAmount.GetValue());
     }
 
     void MovePlayer()
@@ -71,22 +76,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsGrounded())
         {
-            Vector3 newVelocity = move.normalized * moveSpeed;
+            Vector3 newVelocity = move.normalized * CharacterStats.Instance.moveSpeed.GetValue();
             newVelocity.y = playerRigidbody.linearVelocity.y;
             playerRigidbody.linearVelocity = newVelocity;
         }
         else
         {
-            playerRigidbody.AddForce(move.normalized * moveSpeed * 0.15f, ForceMode.VelocityChange);
+            Vector3 horizontalVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0f, playerRigidbody.linearVelocity.z);
+            float airSpeedCap = CharacterStats.Instance.moveSpeed.GetValue() * airControlMultiplier;
 
-            Vector3 horizontalVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0, playerRigidbody.linearVelocity.z);
-
-            float airSpeedCap = moveSpeed * 0.40f;
-            if (horizontalVelocity.magnitude > airSpeedCap)
-            {
-                Vector3 clampedVelocity = horizontalVelocity.normalized * airSpeedCap;
-                playerRigidbody.linearVelocity = new Vector3(clampedVelocity.x, playerRigidbody.linearVelocity.y, clampedVelocity.z);
-            }
+            if (horizontalVelocity.magnitude < airSpeedCap)
+            playerRigidbody.AddForce(move.normalized * CharacterStats.Instance.moveSpeed.GetValue() * airControlMultiplier, ForceMode.VelocityChange);
         }
+    }
+
+    void ApplyFallGravity()
+    {
+        if (playerRigidbody.linearVelocity.y < 0)
+            playerRigidbody.AddForce(Vector3.down * fallMultiplier, ForceMode.Acceleration);
     }
 }

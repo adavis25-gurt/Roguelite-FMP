@@ -910,14 +910,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6defe8af8593545aa65a1949e5e783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 18
-  jumpPower: 12
   groundCheckRadius: 0.37
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 1859544861}
   orientation: {fileID: 1682498810}
+  fallMultiplier: 3
+  airControlMultiplier: 0.1
 --- !u!114 &622401781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,6 +930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539e4634527899d40a210e6431c08247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testItems: []
 --- !u!1 &666168849
 GameObject:
   m_ObjectHideFlags: 0
@@ -6982,6 +6983,53 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: a79d5d7c27cad65438e5e552c75403fb, type: 3}
+--- !u!1 &2140346783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140346785}
+  - component: {fileID: 2140346784}
+  m_Layer: 0
+  m_Name: PlayerStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140346784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140346783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3974c4f20095964ca086bea2a303488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  currentEXP: 0
+  expRequired: 100
+--- !u!4 &2140346785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140346783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18033, y: 201.21793, z: 4.9901}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2144863449 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6443852219947562045, guid: a79d5d7c27cad65438e5e552c75403fb, type: 3}
@@ -7128,6 +7176,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 2140346785}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 963783568}

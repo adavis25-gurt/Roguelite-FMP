@@ -36,7 +36,6 @@ public class ThirdPersonCam : MonoBehaviour
 
         if (inputDir != Vector3.zero)
         {
-            print("gurt");
             playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
         }
     }
