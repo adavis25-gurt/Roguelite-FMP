@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ public class CharacterStats : MonoBehaviour
 {
     public static CharacterStats Instance { get; private set; }
 
-    public Stat health;
+    public Stat health = new Stat(100f);
     public Stat attackDamage  = new Stat(10f);
     public Stat attackSpeed   = new Stat(1f);
     public Stat defense       = new Stat(5f);
@@ -30,8 +31,6 @@ public class CharacterStats : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-
-        health = new Stat(PlayerStatsManager.Instance.health.baseValue);
     }
 
     void Start()

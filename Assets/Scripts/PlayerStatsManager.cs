@@ -25,9 +25,11 @@ public class PlayerStatsManager : MonoBehaviour
 
     public void AddExp(float amount)
     {
-        currentEXP += amount;
+        currentEXP += (amount * CharacterStats.Instance.expMultiplier.GetValue());
+        print(CharacterStats.Instance.expMultiplier.GetValue());
+        print(CharacterStats.Instance.moveSpeed.GetValue());
 
-        if (currentEXP >= expRequired)
+        while (currentEXP >= expRequired)
         {
             currentEXP -= expRequired;
             LevelUp();
@@ -38,6 +40,6 @@ public class PlayerStatsManager : MonoBehaviour
     {
         level++;
         health.baseValue += 50f;
-        expRequired *= 1.15f;
+        expRequired *= 1.05f;
     }
 }
