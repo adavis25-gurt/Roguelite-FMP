@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   itemName: Carrot
-  statType: 4
+  statType: 5
   value: 0.2
   modifierType: 1

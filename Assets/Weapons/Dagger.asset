@@ -9,10 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: RunningShoes
+  m_Script: {fileID: 11500000, guid: 0a6c9d551935cd241b9807c4e80f8bb1, type: 3}
+  m_Name: Dagger
   m_EditorClassIdentifier: 
-  itemName: Running Shoes
-  statType: 6
-  value: 0.2
-  modifierType: 1
+  WeaponName: Dagger
+  statType1: 3
+  statType2: 6
+  value1: 0.15
+  value2: 0.15
+  modifierType1: 1
+  modifierType2: 1
+  cooldown: 1.15
+  attackDistance: 3.5

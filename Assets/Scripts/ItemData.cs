@@ -2,6 +2,7 @@ using UnityEngine;
 
 public enum StatType
 {
+    None = 0,
     Health,
     AttackDamage,
     AttackSpeed,
@@ -9,7 +10,8 @@ public enum StatType
     JumpPower,
     MoveSpeed,
     JumpAmount,
-    ExpMultiplier
+    ExpMultiplier,
+    ProjectileCount,
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/Item Data")]

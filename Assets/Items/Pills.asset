@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pills
   m_EditorClassIdentifier: 
   itemName: Pill
-  statType: 0
+  statType: 1
   value: 50
   modifierType: 0

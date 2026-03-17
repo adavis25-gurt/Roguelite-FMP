@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HermesBoots
   m_EditorClassIdentifier: 
   itemName: Hermes Boots
-  statType: 6
+  statType: 7
   value: 1
   modifierType: 0

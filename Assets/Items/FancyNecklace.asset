@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FancyNecklace
   m_EditorClassIdentifier: 
   itemName: Fancy Necklace
-  statType: 7
+  statType: 8
   value: 0.2
   modifierType: 1

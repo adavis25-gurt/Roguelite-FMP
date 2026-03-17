@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chainmail
   m_EditorClassIdentifier: 
   itemName: Chainmail
-  statType: 3
+  statType: 4
   value: 0.025
   modifierType: 1

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnergyDrink
   m_EditorClassIdentifier: 
   itemName: Energy Drink
-  statType: 2
+  statType: 3
   value: 0.15
   modifierType: 1
