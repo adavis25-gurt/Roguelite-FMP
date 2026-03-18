@@ -1046,8 +1046,6 @@ MonoBehaviour:
   testItems:
   - data: {fileID: 11400000, guid: 7c1bc163376f39e48977808dfcd4ebaf, type: 2}
     amount: 50000
-  - data: {fileID: 11400000, guid: 8c2c54fdd8aa1d44580e6a8b7f47862e, type: 2}
-    amount: 50000
 --- !u!114 &622401782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,7 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 576
   playerObject: {fileID: 622401775}
 --- !u!1 &666168849
 GameObject:
