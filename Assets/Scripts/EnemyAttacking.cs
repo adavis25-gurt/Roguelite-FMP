@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class EnemyAttacking : MonoBehaviour
     [SerializeField] GameObject playerObj;
     [SerializeField] float speed;
 
-    bool paused;
+    bool paused = false;
     float timer = 1;
 
     private void Update()
@@ -21,18 +22,18 @@ public class EnemyAttacking : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (paused) return;
         if (collision.gameObject.tag == "Player")
         {
-            print("HIT THE PLAYER");
-            paused = true;
-            float timeStamp = Time.time + timer;
-            while (paused)
-            {
-                if (timeStamp <= Time.time)
-                {
-                    paused = false;
-                }
-            }
+            //PlayerStatsManager.Instance.health
+            StartCoroutine(CooldownLogic());
         }
+    }
+
+    IEnumerator CooldownLogic()
+    {
+        paused = true;
+        yield return new WaitForSeconds(1f);
+        paused = false;
     }
 }

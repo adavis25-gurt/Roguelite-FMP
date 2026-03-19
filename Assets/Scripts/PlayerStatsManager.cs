@@ -4,6 +4,8 @@ public class PlayerStatsManager : MonoBehaviour
 {
     public static PlayerStatsManager Instance {get; private set;}
 
+    [SerializeField] GameObject playerObj;
+
     public int level = 0;
     public float currentEXP = 0f;
     public float expRequired = 100f;
@@ -20,6 +22,14 @@ public class PlayerStatsManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (health.GetValue() >= 0)
+        {
+            Die();
         }
     }
 
@@ -41,5 +51,10 @@ public class PlayerStatsManager : MonoBehaviour
         level++;
         health.baseValue += 50f;
         expRequired *= 1.05f;
+    }
+
+    void Die()
+    {
+        Destroy(playerObj);
     }
 }
