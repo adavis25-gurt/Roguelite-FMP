@@ -24,7 +24,6 @@ public class PlayerAttack : MonoBehaviour
                 cooldown -= Time.deltaTime;
             if (cooldown <= 0)
             {
-                print("yea done hitting after cooldown");
                 Attack(hit.transform.gameObject);
                 cooldown = 5;
             }
