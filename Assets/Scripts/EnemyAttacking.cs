@@ -26,7 +26,7 @@ public class EnemyAttacking : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerStatsManager.Instance.doDamage(20);
-            print(PlayerStatsManager.Instance.health.GetValue());
+            print(PlayerStatsManager.Instance.currentHealth);
             StartCoroutine(CooldownLogic());
         }
     }

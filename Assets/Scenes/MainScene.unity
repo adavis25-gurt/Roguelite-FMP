@@ -7573,10 +7573,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3974c4f20095964ca086bea2a303488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 0}
+  playerObj: {fileID: 622401775}
   level: 0
   currentEXP: 0
   expRequired: 100
+  currentHealth: 0
 --- !u!4 &2140346785
 Transform:
   m_ObjectHideFlags: 0

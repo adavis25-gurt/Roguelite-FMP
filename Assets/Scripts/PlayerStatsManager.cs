@@ -12,6 +12,10 @@ public class PlayerStatsManager : MonoBehaviour
 
     public Stat health = new Stat(100f);
 
+    public float currentHealth;
+
+    PlayerMovement playerMove;
+
     void Awake()
     {
         if (Instance == null)
@@ -25,6 +29,11 @@ public class PlayerStatsManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        currentHealth = CharacterStats.Instance.health.GetValue();
+    }
+
     private void Update()
     {
         if (health.GetValue() <= 0)
@@ -36,8 +45,6 @@ public class PlayerStatsManager : MonoBehaviour
     public void AddExp(float amount)
     {
         currentEXP += (amount * CharacterStats.Instance.expMultiplier.GetValue());
-        print(CharacterStats.Instance.expMultiplier.GetValue());
-        print(CharacterStats.Instance.moveSpeed.GetValue());
 
         while (currentEXP >= expRequired)
         {
@@ -55,15 +62,20 @@ public class PlayerStatsManager : MonoBehaviour
 
     void Die()
     {
-        Destroy(playerObj);
+        Time.timeScale = 0f;
     }
 
     public void doDamage(int amount)
     {
-        if (amount >= health.GetValue())
+        if (amount >= currentHealth)
         {
             Die();
         }
-        health.GetValue() -= amount;
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            print("DEAD");
+            Die();
+        }
     }
 }
