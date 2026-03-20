@@ -21,6 +21,8 @@ public class CharacterStats : MonoBehaviour
     public Stat moveSpeed     = new Stat(16f);
     public Stat jumpAmount    = new Stat(1f);
     public Stat expMultiplier = new Stat(1f);
+    public Stat CritChance = new Stat(2.5f);
+    public Stat CritDamage = new Stat(50f);
 
     [Header("Debug")]
     public List<TestItem> testItems;
@@ -72,6 +74,12 @@ public class CharacterStats : MonoBehaviour
                 break;
             case StatType.ExpMultiplier:
                 expMultiplier.AddModifier(modifier);
+                break;
+            case StatType.CritChance:
+                CritChance.AddModifier(modifier);
+                break;
+            case StatType.CritDamage:
+                CritDamage.AddModifier(modifier);
                 break;
         }
     }

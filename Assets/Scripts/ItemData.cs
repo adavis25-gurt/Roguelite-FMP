@@ -12,6 +12,8 @@ public enum StatType
     JumpAmount,
     ExpMultiplier,
     ProjectileCount,
+    CritDamage,
+    CritChance,
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/Item Data")]
