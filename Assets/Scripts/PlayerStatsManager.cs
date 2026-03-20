@@ -27,7 +27,7 @@ public class PlayerStatsManager : MonoBehaviour
 
     private void Update()
     {
-        if (health.GetValue() >= 0)
+        if (health.GetValue() <= 0)
         {
             Die();
         }
@@ -56,5 +56,14 @@ public class PlayerStatsManager : MonoBehaviour
     void Die()
     {
         Destroy(playerObj);
+    }
+
+    public void doDamage(int amount)
+    {
+        if (amount >= health.GetValue())
+        {
+            Die();
+        }
+        health.GetValue() -= amount;
     }
 }

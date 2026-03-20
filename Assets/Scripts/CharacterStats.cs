@@ -13,7 +13,7 @@ public class CharacterStats : MonoBehaviour
 {
     public static CharacterStats Instance { get; private set; }
 
-    public Stat health = new Stat(100f);
+    public Stat health;
     public Stat attackDamage  = new Stat(10f);
     public Stat attackSpeed   = new Stat(1f);
     public Stat defense       = new Stat(5f);
@@ -35,6 +35,8 @@ public class CharacterStats : MonoBehaviour
 
     void Start()
     {
+        health = new Stat(PlayerStatsManager.Instance.health.baseValue);
+
         foreach (TestItem testItem in testItems)
             for (int i = 0; i < testItem.amount; i++)
                 ApplyItem(testItem.data);
