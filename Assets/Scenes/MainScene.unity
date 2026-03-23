@@ -6368,7 +6368,7 @@ MonoBehaviour:
   blockPrefab: {fileID: 2644086623416676604, guid: 47edd3f0c8400ad428971d214be501e2, type: 3}
   wallPrefab: {fileID: 8120265535461468384, guid: 74ad25d42918f6b4abb03bde112badc2, type: 3}
   mapSize: 50
-  hilliness: 0.522
+  hilliness: 0.2
 --- !u!4 &963783568
 Transform:
   m_ObjectHideFlags: 0

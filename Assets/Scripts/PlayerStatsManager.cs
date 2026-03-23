@@ -63,6 +63,8 @@ public class PlayerStatsManager : MonoBehaviour
     void Die()
     {
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void doDamage(int amount)

@@ -37,7 +37,8 @@ public class CharacterStats : MonoBehaviour
 
     void Start()
     {
-        health = new Stat(PlayerStatsManager.Instance.health.baseValue);
+        health = new Stat(PlayerStatsManager.Instance.health.GetValue());
+        print(health.GetValue());
 
         foreach (TestItem testItem in testItems)
             for (int i = 0; i < testItem.amount; i++)
