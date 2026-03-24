@@ -7,4 +7,37 @@
     align-content: flex-start;
     -unity-background-scale-mode: stretch-to-fill;
     scale: 0.3 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.unity-button {
+    flex-grow: 0.1;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-content: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 19px;
+    translate: 0 293px;
+    background-color: rgb(118, 165, 180);
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-color: rgb(52, 120, 147);
+    border-right-color: rgb(52, 120, 147);
+    border-bottom-color: rgb(52, 120, 147);
+    border-left-color: rgb(52, 120, 147);
+    margin-right: 50px;
+    margin-left: 50px;
+    -unity-font-definition: url("project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&guid=b6db1521497d36546be41a6c0a53da86&type=3#munro-small");
+    font-size: 50px;
+}
+
+.unity-text-element {
+}
+
+.hide {
+    visibility: hidden;
 }

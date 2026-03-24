@@ -1,11 +1,12 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/PauseMenu.uss?fileID=7433441132597879392&amp;guid=fdb1f5260463c6847b0544c4563f57a4&amp;type=3#PauseMenu" />
     <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1;">
-        <ui:VisualElement name="Container" class="menu" style="flex-grow: 1;">
-            <ui:Button text="Button" />
-            <ui:Button text="Button" />
-            <ui:Button text="Button" />
-            <ui:Button text="Button" />
+        <ui:VisualElement name="Container" class="menu" style="flex-grow: 0.85; scale: 1 1; flex-shrink: 1; flex-basis: auto; align-items: stretch; width: 648px; translate: 636px 69px; background-size: 100% 76%; -unity-slice-top: -55; background-color: rgba(0, 0, 0, 0.59);">
+            <ui:Button text="RESUME&#10;" name="Resume" style="width: 567px; position: relative; align-items: stretch; margin-top: 0; margin-right: 0; margin-bottom: 50px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-background-scale-mode: stretch-to-fill; translate: 40.5px 180px; transform-origin: center; scale: 1 1; background-color: rgb(130, 130, 130); border-left-color: rgb(77, 77, 77); border-right-color: rgb(77, 77, 77); border-top-color: rgb(77, 77, 77); border-bottom-color: rgb(77, 77, 77);" />
+            <ui:Button text="SETTINGS&#10;" name="Settings" style="width: 567px; position: relative; align-items: stretch; margin-top: 0; margin-right: 0; margin-bottom: 50px; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-background-scale-mode: stretch-to-fill; translate: 40.5px 180px; transform-origin: center; scale: 1 1; background-color: rgb(130, 130, 130); border-left-color: rgb(77, 77, 77); border-right-color: rgb(77, 77, 77); border-top-color: rgb(77, 77, 77); border-bottom-color: rgb(77, 77, 77);" />
+            <ui:Button text="RETURN TO MAIN MENU&#10;" name="MainMenu" style="width: 567px; position: relative; align-items: stretch; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; -unity-background-scale-mode: stretch-to-fill; translate: 40.5px 180px; transform-origin: center; scale: 1 1; background-color: rgb(130, 130, 130); border-left-color: rgb(77, 77, 77); border-right-color: rgb(77, 77, 77); border-top-color: rgb(77, 77, 77); border-bottom-color: rgb(77, 77, 77);" />
+            <ui:Label text="MADE BY AMEERA AND AIDEN" parse-escape-sequences="false" style="color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); font-size: 53px; translate: 0 621px; white-space: normal; margin-top: -382px; padding-right: -124px; -unity-text-align: middle-center;" />
+            <ui:Label text="PAUSED" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); -unity-text-align: upper-center; font-size: 150px; color: rgb(255, 255, 255); translate: 0 -224px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
