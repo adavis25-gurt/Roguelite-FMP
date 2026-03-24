@@ -5,28 +5,30 @@ using UnityEngine;
 public class EnemyAttacking : MonoBehaviour
 {
     [SerializeField] GameObject playerObj;
-    [SerializeField] float speed;
 
+    EnemyStats stats;
     bool paused = false;
-    float timer = 1;
 
-    private void Update()
+    void Awake()
     {
-        float step = speed * Time.deltaTime;
+        stats = GetComponent<EnemyStats>();
+    }
 
-        if(!paused )
+    void Update()
+    {
+        if (!paused)
         {
+            float step = stats.speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, step);
-        }    
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (paused) return;
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerStatsManager.Instance.doDamage(20);
-            print(PlayerStatsManager.Instance.currentHealth);
+            PlayerStatsManager.Instance.doDamage((int)stats.damage);
             StartCoroutine(CooldownLogic());
         }
     }
@@ -36,5 +38,10 @@ public class EnemyAttacking : MonoBehaviour
         paused = true;
         yield return new WaitForSeconds(1f);
         paused = false;
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        playerObj = target;
     }
 }

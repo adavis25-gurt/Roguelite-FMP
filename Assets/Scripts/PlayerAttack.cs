@@ -1,32 +1,60 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class WeaponSlot
+{
+    public WeaponData data;
+    [HideInInspector] public float cooldownTimer = 0f;
+    [HideInInspector] public float currentDamage;
+}
 
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] GameObject playerObject;
+    public List<WeaponSlot> weapons;
 
-    float cooldown = 0;
+    void Start()
+    {
+        foreach (WeaponSlot slot in weapons)
+            if (slot.data != null)
+                slot.currentDamage = slot.data.baseDamage;
+    }
 
-    void Attack(GameObject enemy)
+    void Attack(WeaponSlot slot, GameObject enemy)
     {
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
         if (!stats) return;
-
-        stats.doDamage(20);
+        stats.TakeDamage(slot.currentDamage);
     }
 
     void Update()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(playerObject.transform.position, 10f, Vector3.forward, 500f, enemyLayer, QueryTriggerInteraction.UseGlobal);
-        foreach (RaycastHit hit in hits)
+        foreach (WeaponSlot slot in weapons)
         {
-            if (cooldown != 0)
-                cooldown -= Time.deltaTime;
-            if (cooldown <= 0)
+            if (slot.data == null) continue;
+
+            if (slot.cooldownTimer > 0f)
             {
-                Attack(hit.transform.gameObject);
-                cooldown = 5;
+                slot.cooldownTimer -= Time.deltaTime;
+                continue;
             }
+
+            RaycastHit[] hits = Physics.SphereCastAll(
+                playerObject.transform.position,
+                slot.data.attackDistance,
+                Vector3.forward,
+                0f,
+                enemyLayer,
+                QueryTriggerInteraction.UseGlobal
+            );
+
+            foreach (RaycastHit hit in hits)
+                Attack(slot, hit.transform.gameObject);
+
+            if (hits.Length > 0)
+                slot.cooldownTimer = slot.data.cooldown;
         }
     }
 }

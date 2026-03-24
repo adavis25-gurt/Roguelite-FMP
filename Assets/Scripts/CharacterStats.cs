@@ -23,6 +23,7 @@ public class CharacterStats : MonoBehaviour
     public Stat expMultiplier = new Stat(1f);
     public Stat CritChance = new Stat(2.5f);
     public Stat CritDamage = new Stat(50f);
+    public Stat projectileCount = new Stat(1f);
 
     [Header("Debug")]
     public List<TestItem> testItems;

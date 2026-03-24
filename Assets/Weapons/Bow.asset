@@ -12,12 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6c9d551935cd241b9807c4e80f8bb1, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  WeaponName: Bow
-  statType1: 3
-  statType2: 9
-  value1: 0.1
-  value2: 2
-  modifierType1: 1
-  modifierType2: 0
+  weaponName: Bow
+  baseDamage: 10
   cooldown: 2
-  attackDistance: 15
+  attackDistance: 30

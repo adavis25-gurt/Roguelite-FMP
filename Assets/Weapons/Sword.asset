@@ -12,12 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6c9d551935cd241b9807c4e80f8bb1, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  WeaponName: Sword
-  statType1: 1
-  statType2: 2
-  value1: 50
-  value2: 0.15
-  modifierType1: 0
-  modifierType2: 1
+  weaponName: Sword
+  baseDamage: 20
   cooldown: 1.75
-  attackDistance: 5
+  attackDistance: 10

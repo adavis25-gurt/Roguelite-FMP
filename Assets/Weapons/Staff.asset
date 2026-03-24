@@ -12,12 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6c9d551935cd241b9807c4e80f8bb1, type: 3}
   m_Name: Staff
   m_EditorClassIdentifier: 
-  WeaponName: Staff
-  statType1: 8
-  statType2: 9
-  value1: 0.2
-  value2: 5
-  modifierType1: 1
-  modifierType2: 0
+  weaponName: Staff
+  baseDamage: 15
   cooldown: 1.5
-  attackDistance: 10
+  attackDistance: 20

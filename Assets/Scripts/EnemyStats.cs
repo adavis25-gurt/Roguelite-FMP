@@ -3,30 +3,47 @@ using UnityEngine.InputSystem;
 
 public class EnemyStats : MonoBehaviour
 {
-    [SerializeField] float health;
+    [SerializeField] float baseHealth = 30f;
+    [SerializeField] float baseXPReward = 20f;
+    [SerializeField] float baseDamage = 20f;
+    [SerializeField] float baseSpeed = 3f;
+
+    [SerializeField] float healthGrowthRate = 0.3f;
+    [SerializeField] float xpGrowthRate = 0.2f;
+    [SerializeField] float damageGrowthRate = 0.3f;
+    [SerializeField] float speedGrowthRate = 0.8f;
+
     public Timer timer;
 
-    private void Update()
+    float currentHealth;
+
+    public float damage { get; private set; }
+    public float speed { get; private set; }
+
+    void Start()
     {
-        if (timer.minutes >= 2)
-        {
-            health += (1.015f * Time.deltaTime);
-        }
+        currentHealth = baseHealth;
+    }
+
+    void Update()
+    {
+        float t = timer.minutes + (timer.seconds / 60f);
+        damage = baseDamage * (1f + t * damageGrowthRate);
+        speed  = baseSpeed  * (1f + t * speedGrowthRate);
     }
 
     void Die()
     {
+        float t = timer.minutes + (timer.seconds / 60f);
+        float xp = baseXPReward * (1f + t * xpGrowthRate);
+        PlayerStatsManager.Instance.AddExp(xp);
         Destroy(gameObject);
-        PlayerStatsManager.Instance.AddExp(20);
     }
 
-
-    public void doDamage(int damage)
+    public void TakeDamage(float dmg)
     {
-        health -= damage;
-        if (health <= 0)
-        {
+        currentHealth -= dmg;
+        if (currentHealth <= 0f)
             Die();
-        }
     }
 }
