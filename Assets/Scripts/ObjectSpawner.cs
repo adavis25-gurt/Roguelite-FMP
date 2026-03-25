@@ -9,7 +9,6 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] float spawnRadius = 20f;
     [SerializeField] float spawnInterval = 3f;
     [SerializeField] float minSpawnInterval = 0.5f;
-    [SerializeField] float intervalReductionPerMinute = 0.2f;
 
     [SerializeField] int baseSpawnCount = 1;
     [SerializeField] float spawnCountExponent = 2.5f;
@@ -20,7 +19,7 @@ public class ObjectSpawner : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        float interval = Mathf.Max(minSpawnInterval, spawnInterval - (timer.minutes * intervalReductionPerMinute));
+        float interval = Mathf.Max(minSpawnInterval, spawnInterval);
 
         if (spawnTimer >= interval)
         {

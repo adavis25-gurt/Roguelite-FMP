@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerStatsManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerStatsManager : MonoBehaviour
     public float currentHealth;
 
     PlayerMovement playerMove;
+
+    bool canTakeDamage = true;
 
     void Awake()
     {
@@ -69,6 +72,7 @@ public class PlayerStatsManager : MonoBehaviour
 
     public void doDamage(int amount)
     {
+        if (!canTakeDamage) return;
         if (amount >= currentHealth)
         {
             Die();
@@ -79,5 +83,14 @@ public class PlayerStatsManager : MonoBehaviour
             print("DEAD");
             Die();
         }
+    }
+
+    public IEnumerator iFrameLogic()
+    {
+        canTakeDamage = false;
+        print("cant take damage");
+        yield return new WaitForSeconds(0.5f);
+        print("can take damage");
+        canTakeDamage = true;
     }
 }

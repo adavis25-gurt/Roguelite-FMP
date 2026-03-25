@@ -29,6 +29,7 @@ public class EnemyAttacking : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerStatsManager.Instance.doDamage((int)stats.damage);
+            StartCoroutine(PlayerStatsManager.Instance.iFrameLogic());
             StartCoroutine(CooldownLogic());
         }
     }

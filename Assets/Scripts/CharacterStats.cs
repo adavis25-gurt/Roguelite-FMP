@@ -13,13 +13,13 @@ public class CharacterStats : MonoBehaviour
 {
     public static CharacterStats Instance { get; private set; }
 
-    public Stat health;
-    public Stat attackDamage  = new Stat(10f);
-    public Stat attackSpeed   = new Stat(1f);
-    public Stat defense       = new Stat(5f);
-    public Stat jumpPower     = new Stat(8f);
-    public Stat moveSpeed     = new Stat(16f);
-    public Stat jumpAmount    = new Stat(1f);
+    public Stat health = new Stat(100f);
+    public Stat attackDamage = new Stat(10f);
+    public Stat attackSpeed = new Stat(1f);
+    public Stat defense = new Stat(5f);
+    public Stat jumpPower = new Stat(8f);
+    public Stat moveSpeed = new Stat(16f);
+    public Stat jumpAmount = new Stat(1f);
     public Stat expMultiplier = new Stat(1f);
     public Stat CritChance = new Stat(2.5f);
     public Stat CritDamage = new Stat(50f);
@@ -38,9 +38,6 @@ public class CharacterStats : MonoBehaviour
 
     void Start()
     {
-        health = new Stat(PlayerStatsManager.Instance.health.GetValue());
-        print(health.GetValue());
-
         foreach (TestItem testItem in testItems)
             for (int i = 0; i < testItem.amount; i++)
                 ApplyItem(testItem.data);

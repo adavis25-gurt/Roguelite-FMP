@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
     {
         foreach (WeaponSlot slot in weapons)
             if (slot.data != null)
-                slot.currentDamage = slot.data.baseDamage;
+                slot.currentDamage = (slot.data.baseDamage + CharacterStats.Instance.attackDamage.GetValue()); 
     }
 
     void Attack(WeaponSlot slot, GameObject enemy)

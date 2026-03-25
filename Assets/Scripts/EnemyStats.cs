@@ -30,6 +30,8 @@ public class EnemyStats : MonoBehaviour
         float t = timer.minutes + (timer.seconds / 60f);
         damage = baseDamage * (1f + t * damageGrowthRate);
         speed  = baseSpeed  * (1f + t * speedGrowthRate);
+        print(damage);
+        print(currentHealth);
     }
 
     void Die()
