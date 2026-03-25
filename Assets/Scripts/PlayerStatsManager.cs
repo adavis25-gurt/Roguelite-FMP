@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatsManager : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class PlayerStatsManager : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = CharacterStats.Instance.health.GetValue();
     }
 
     private void Update()
@@ -65,9 +65,9 @@ public class PlayerStatsManager : MonoBehaviour
 
     void Die()
     {
-        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        SceneManager.LoadScene("TherapyRoom");
     }
 
     public void doDamage(int amount)
