@@ -19,6 +19,7 @@ public class PlayerStatsManager : MonoBehaviour
     PlayerMovement playerMove;
 
     bool canTakeDamage = true;
+    public int coins;
 
     void Awake()
     {
