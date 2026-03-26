@@ -21,6 +21,7 @@ public class PlayerStatsManager : MonoBehaviour
     bool canTakeDamage = true;
     public int coins;
 
+    [SerializeField] Teleporter teleporter;
     void Awake()
     {
         if (Instance == null)
@@ -68,7 +69,9 @@ public class PlayerStatsManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        playerObj.gameObject.SetActive(false);
         SceneManager.LoadScene("TherapyRoom");
+        teleporter.passPlayerIn(playerObj);
     }
 
     public void doDamage(int amount)
