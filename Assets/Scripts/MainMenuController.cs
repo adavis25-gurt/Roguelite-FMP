@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class MainMenuController : MonoBehaviour
 
     void OnStoryButtonClicked()
     {
-        print("ye go to story mode chud");
+        SceneManager.LoadScene("MainScene");
     }
 
     void OnEndlessButtonClicked()

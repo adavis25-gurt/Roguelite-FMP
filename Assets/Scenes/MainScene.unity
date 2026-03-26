@@ -938,7 +938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 0
-  minutes: 5
+  minutes: 0
 --- !u!4 &572201891
 Transform:
   m_ObjectHideFlags: 0
@@ -6494,7 +6494,7 @@ MonoBehaviour:
   blockPrefab: {fileID: 2644086623416676604, guid: 47edd3f0c8400ad428971d214be501e2, type: 3}
   wallPrefab: {fileID: 8120265535461468384, guid: 74ad25d42918f6b4abb03bde112badc2, type: 3}
   mapSize: 50
-  hilliness: 0.2
+  hilliness: 0.3
 --- !u!4 &963783568
 Transform:
   m_ObjectHideFlags: 0
@@ -7638,6 +7638,7 @@ MonoBehaviour:
   currentEXP: 0
   expRequired: 100
   currentHealth: 0
+  coins: 0
 --- !u!4 &2140346785
 Transform:
   m_ObjectHideFlags: 0
