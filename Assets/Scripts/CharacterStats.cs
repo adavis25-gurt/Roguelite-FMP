@@ -14,7 +14,7 @@ public class CharacterStats : MonoBehaviour
     public static CharacterStats Instance { get; private set; }
 
     public Stat health = new Stat(100f);
-    public Stat attackDamage = new Stat(10f);
+    public Stat attackDamage = new Stat(10f); 
     public Stat attackSpeed = new Stat(1f);
     public Stat defense = new Stat(5f);
     public Stat jumpPower = new Stat(8f);

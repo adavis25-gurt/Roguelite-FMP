@@ -5,11 +5,11 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] float baseHealth = 30f;
     [SerializeField] float baseXPReward = 20f;
+    [SerializeField] int baseCoinReward = 50;
     [SerializeField] float baseDamage = 20f;
     [SerializeField] float baseSpeed = 3f;
 
     [SerializeField] float healthGrowthRate = 0.3f;
-    [SerializeField] float xpGrowthRate = 0.2f;
     [SerializeField] float damageGrowthRate = 0.3f;
     [SerializeField] float speedGrowthRate = 0.8f;
 
@@ -30,15 +30,15 @@ public class EnemyStats : MonoBehaviour
         float t = timer.minutes + (timer.seconds / 60f);
         damage = baseDamage * (1f + t * damageGrowthRate);
         speed  = baseSpeed  * (1f + t * speedGrowthRate);
-        print(damage);
-        print(currentHealth);
+        currentHealth = baseHealth * (1f * t * healthGrowthRate);
     }
 
     void Die()
     {
-        float t = timer.minutes + (timer.seconds / 60f);
-        float xp = baseXPReward * (1f + t * xpGrowthRate);
+        float xp = baseXPReward;
+        int coins = baseCoinReward;
         PlayerStatsManager.Instance.AddExp(xp);
+        PlayerStatsManager.Instance.AddCoins(coins);
         Destroy(gameObject);
     }
 

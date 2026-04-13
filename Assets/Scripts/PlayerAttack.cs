@@ -17,9 +17,11 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        foreach (WeaponSlot slot in weapons)
-            if (slot.data != null)
+        foreach (WeaponSlot slot in weapons) {
+            if (slot.data != null) {
                 slot.currentDamage = (slot.data.baseDamage + CharacterStats.Instance.attackDamage.GetValue()); 
+            }
+        }
     }
 
     void Attack(WeaponSlot slot, GameObject enemy)
@@ -41,16 +43,13 @@ public class PlayerAttack : MonoBehaviour
                 continue;
             }
 
-            RaycastHit[] hits = Physics.SphereCastAll(
-                playerObject.transform.position,
-                slot.data.attackDistance,
-                Vector3.forward,
-                0f,
-                enemyLayer,
-                QueryTriggerInteraction.UseGlobal
+            Collider[] hits = Physics.OverlapSphere(
+            playerObject.transform.position,
+            slot.data.attackDistance,
+            enemyLayer
             );
 
-            foreach (RaycastHit hit in hits)
+            foreach (Collider hit in hits)
                 Attack(slot, hit.transform.gameObject);
 
             if (hits.Length > 0)

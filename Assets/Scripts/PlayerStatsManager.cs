@@ -58,6 +58,11 @@ public class PlayerStatsManager : MonoBehaviour
         }
     }
 
+    public void AddCoins(int amount)
+    {
+        coins += amount;
+    }
+
     private void LevelUp()
     {
         level++;
