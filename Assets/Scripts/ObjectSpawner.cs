@@ -8,10 +8,11 @@ public class ObjectSpawner : MonoBehaviour
 
     [SerializeField] float spawnRadius = 20f;
     [SerializeField] float spawnInterval = 3f;
-    [SerializeField] float minSpawnInterval = 0.5f;
 
     [SerializeField] int baseSpawnCount = 1;
     [SerializeField] float spawnCountExponent = 2.5f;
+
+    [SerializeField] GameObject enemies;
 
     float spawnTimer = 0f;
 
@@ -45,7 +46,7 @@ public class ObjectSpawner : MonoBehaviour
         Vector2 randomCircle = Random.insideUnitCircle.normalized * spawnRadius;
         Vector3 spawnPos = player.position + new Vector3(randomCircle.x, 0f, randomCircle.y);
 
-        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity, enemies.transform);
 
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
         if (stats != null) stats.timer = timer;
