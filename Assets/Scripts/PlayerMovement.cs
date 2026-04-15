@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 direction = moveAction.ReadValue<Vector2>();
         Vector3 move = orientation.forward * direction.y + orientation.right * direction.x;
-        move.y = 0;
+        //move.y = 0;
 
         if (IsGrounded())
         {

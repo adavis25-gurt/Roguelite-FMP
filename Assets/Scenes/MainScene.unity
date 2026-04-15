@@ -431,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &324814884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324814883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -1163,6 +1163,7 @@ GameObject:
   - component: {fileID: 622401777}
   - component: {fileID: 622401781}
   - component: {fileID: 622401782}
+  - component: {fileID: 622401783}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1286,7 +1287,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1859544861}
   orientation: {fileID: 1682498810}
   fallMultiplier: 3
-  airControlMultiplier: 0.1
+  airControlMultiplier: 1
 --- !u!114 &622401781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,6 +1331,19 @@ MonoBehaviour:
   - data: {fileID: 11400000, guid: 2a9fc287b66e87543b6ae89de565b4aa, type: 2}
     cooldownTimer: 0
     currentDamage: 0
+--- !u!114 &622401783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622401775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f479b05e725224abec381a6e80a498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUi: {fileID: 324814884}
 --- !u!1 &666168849
 GameObject:
   m_ObjectHideFlags: 0
