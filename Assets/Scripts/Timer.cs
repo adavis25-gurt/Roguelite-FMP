@@ -16,24 +16,7 @@ public class Timer : MonoBehaviour
 
     Vector3 playerLastPos;
 
-    void TeleportToShop()
-    {
-        foreach (Transform child in enemies.transform)
-        {
-            Destroy(child.gameObject);
-        }
-        playerLastPos = player.transform.position;
-        player.transform.position = shopSpawn.position;
-        print("yea bro teleported apparently");
-        //TeleportBack();
-        //ObjectSpawner.ToggleSpawning();
-    }
-
-    void TeleportBack()
-    {
-        player.transform.position = playerLastPos;
-    }
-
+    
     void Update()
     {
         if (ObjectSpawner.IsPaused()) return;
@@ -43,12 +26,6 @@ public class Timer : MonoBehaviour
         {
             seconds -= 60;
             minutes++;
-        }
-
-        if (minutes > 0 && minutes != lastMinute){
-            lastMinute = (int)minutes;
-            ObjectSpawner.ToggleSpawning();
-            TeleportToShop();
         }
     }
 }
