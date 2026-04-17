@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ShopUI.uss?fileID=7433441132597879392&amp;guid=095f4ea2bbd6c82459cfb5b90bcd0605&amp;type=3#ShopUI" />
+    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1; translate: 960px 0;">
+        <ui:VisualElement name="Container" class="menu" />
+    </ui:VisualElement>
+</ui:UXML>

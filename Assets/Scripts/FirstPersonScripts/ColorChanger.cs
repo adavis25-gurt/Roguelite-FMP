@@ -16,6 +16,6 @@ public class ColorChanger : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        material.color = new Color(Random.value, Random.value, Random.value);
+        material.color = new Color(Random.value, Random.value, Random.value, Random.value);
     }
 }
