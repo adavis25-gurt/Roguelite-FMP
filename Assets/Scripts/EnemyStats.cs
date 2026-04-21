@@ -22,7 +22,8 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
-        currentHealth = baseHealth;
+        float t = timer.minutes + (timer.seconds / 60f);
+        currentHealth = baseHealth * (1f + t * healthGrowthRate);
     }
 
     void Update()
@@ -30,14 +31,11 @@ public class EnemyStats : MonoBehaviour
         float t = timer.minutes + (timer.seconds / 60f);
         damage = baseDamage * (1f + t * damageGrowthRate);
         speed  = baseSpeed  * (1f + t * speedGrowthRate);
-        currentHealth = baseHealth * (1f * t * healthGrowthRate);
     }
 
     void Die()
     {
-        float xp = baseXPReward;
         int coins = baseCoinReward;
-        PlayerStatsManager.Instance.AddExp(xp);
         PlayerStatsManager.Instance.AddCoins(coins);
         Destroy(gameObject);
     }
