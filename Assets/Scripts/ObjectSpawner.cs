@@ -14,10 +14,14 @@ public class ObjectSpawner : MonoBehaviour
 
     [SerializeField] GameObject enemies;
 
+    public bool paused;
+
     float spawnTimer = 0f;
 
     void Update()
     {
+        if (paused) return;
+
         spawnTimer += Time.deltaTime;
 
         float interval = spawnInterval;

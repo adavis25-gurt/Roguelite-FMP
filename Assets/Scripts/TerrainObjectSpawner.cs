@@ -15,7 +15,7 @@ public class TerrainObjectSpawner : MonoBehaviour
         }
         else if (roll > 0.5f)
         {
-            SpawnObject(gridElement, stonePrefabs, Random.Range(0.25f, 0.5f));
+            SpawnObject(gridElement, stonePrefabs, Random.Range(10f,20f));
         }
     }
 

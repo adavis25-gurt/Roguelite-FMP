@@ -841,6 +841,7 @@ MonoBehaviour:
   baseSpawnCount: 5
   spawnCountExponent: 1.15
   enemies: {fileID: 1384621114}
+  paused: 1
 --- !u!4 &510407976
 Transform:
   m_ObjectHideFlags: 0
@@ -1083,11 +1084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539e4634527899d40a210e6431c08247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testItems:
-  - data: {fileID: 11400000, guid: 1d38342fc0405f04a9537313a3bb53a7, type: 2}
-    amount: 50000
-  - data: {fileID: 11400000, guid: 8c2c54fdd8aa1d44580e6a8b7f47862e, type: 2}
-    amount: 5
 --- !u!114 &622401782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7189,9 +7185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 622401775}
-  level: 0
-  currentEXP: 0
-  expRequired: 100
   currentHealth: 0
   coins: 0
   teleporter: {fileID: 0}
