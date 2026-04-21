@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpsRemaining <= 0) return;
         playerRigidbody.linearVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0f, playerRigidbody.linearVelocity.z);
-        playerRigidbody.AddForce(Vector3.up * CharacterStats.Instance.jumpPower.GetValue(), ForceMode.Impulse);
+        playerRigidbody.AddForce(Vector3.up * PlayerStatsManager.Instance.jumpPower.GetValue(), ForceMode.Impulse);
         jumpsRemaining--;
     }
 
@@ -65,34 +65,40 @@ public class PlayerMovement : MonoBehaviour
     void HandleGrounding()
     {
         if (IsGrounded())
-            jumpsRemaining = Mathf.RoundToInt(CharacterStats.Instance.jumpAmount.GetValue());
+        {
+            jumpsRemaining = Mathf.RoundToInt(PlayerStatsManager.Instance.jumpAmount.GetValue());
+        }
     }
 
     void MovePlayer()
     {
         Vector2 direction = moveAction.ReadValue<Vector2>();
         Vector3 move = orientation.forward * direction.y + orientation.right * direction.x;
-        //move.y = 0;
+        move.y = 0;
 
         if (IsGrounded())
         {
-            Vector3 newVelocity = move.normalized * CharacterStats.Instance.moveSpeed.GetValue();
+            Vector3 newVelocity = move.normalized * PlayerStatsManager.Instance.moveSpeed.GetValue();
             newVelocity.y = playerRigidbody.linearVelocity.y;
             playerRigidbody.linearVelocity = newVelocity;
         }
         else
         {
             Vector3 horizontalVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0f, playerRigidbody.linearVelocity.z);
-            float airSpeedCap = CharacterStats.Instance.moveSpeed.GetValue() * airControlMultiplier;
+            float airSpeedCap = PlayerStatsManager.Instance.moveSpeed.GetValue() * airControlMultiplier;
 
             if (horizontalVelocity.magnitude < airSpeedCap)
-            playerRigidbody.AddForce(move.normalized * CharacterStats.Instance.moveSpeed.GetValue() * airControlMultiplier, ForceMode.VelocityChange);
+            {
+                playerRigidbody.AddForce(move.normalized * PlayerStatsManager.Instance.moveSpeed.GetValue() * airControlMultiplier, ForceMode.VelocityChange);
+            }
         }
     }
 
     void ApplyFallGravity()
     {
         if (playerRigidbody.linearVelocity.y < 0)
+        {
             playerRigidbody.AddForce(Vector3.down * fallMultiplier, ForceMode.Acceleration);
+        }
     }
 }

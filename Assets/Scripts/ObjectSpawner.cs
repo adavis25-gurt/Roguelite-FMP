@@ -16,8 +16,6 @@ public class ObjectSpawner : MonoBehaviour
 
     float spawnTimer = 0f;
 
-    bool paused = false;
-
     void Update()
     {
         spawnTimer += Time.deltaTime;
@@ -33,8 +31,6 @@ public class ObjectSpawner : MonoBehaviour
 
     void SpawnWave()
     {
-        if (paused) return;
-
         float t = timer.minutes + (timer.seconds / 60f);
         int count = Mathf.FloorToInt(baseSpawnCount * Mathf.Pow(t + 1f, spawnCountExponent));
         for (int i = 0; i < count; i++)
@@ -53,14 +49,5 @@ public class ObjectSpawner : MonoBehaviour
 
         EnemyAttacking attacking = enemy.GetComponent<EnemyAttacking>();
         if (attacking != null) attacking.SetTarget(player.gameObject);
-    }
-
-    public void ToggleSpawning() {
-        paused = !paused;
-        print(paused);
-    }
-
-    public bool IsPaused() {
-        return paused;
     }
 }

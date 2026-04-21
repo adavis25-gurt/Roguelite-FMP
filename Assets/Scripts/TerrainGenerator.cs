@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
+    [SerializeField] TerrainObjectSpawner terrainObjectSpawner;
     [SerializeField] GridElement blockPrefab;
     [SerializeField] GameObject wallPrefab;
 
@@ -62,6 +63,8 @@ public class TerrainGenerator : MonoBehaviour
         else
         {
             lockedDirection = Vector2Int.zero;
+            terrainObjectSpawner.SpawnRandomObject(currentElement);
+
         }
         currentElement.ConfigureBottomPart(verticalBlockSpacing);
     }

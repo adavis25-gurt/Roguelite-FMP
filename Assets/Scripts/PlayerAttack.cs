@@ -17,9 +17,11 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        foreach (WeaponSlot slot in weapons) {
-            if (slot.data != null) {
-                slot.currentDamage = (slot.data.baseDamage + CharacterStats.Instance.attackDamage.GetValue()); 
+        foreach (WeaponSlot slot in weapons)
+        {
+            if (slot.data != null)
+            {
+                slot.currentDamage = (slot.data.baseDamage + PlayerStatsManager.Instance.attackDamage.GetValue()); 
             }
         }
     }
@@ -50,10 +52,14 @@ public class PlayerAttack : MonoBehaviour
             );
 
             foreach (Collider hit in hits)
+            {
                 Attack(slot, hit.transform.gameObject);
+            }
 
             if (hits.Length > 0)
+            {
                 slot.cooldownTimer = slot.data.cooldown;
+            }
         }
     }
 }

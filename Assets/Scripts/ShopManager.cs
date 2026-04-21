@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
         if (PlayerStatsManager.Instance.coins < cost) return false;
         PlayerStatsManager.Instance.coins -= cost;
         purchaseCount++;
-        CharacterStats.Instance.ApplyItem(data);
+        PlayerStatsManager.Instance.ApplyItem(data);
         return true;
     }
 
@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour
         purchaseCount++;
         slot.data.baseDamage += damageIncrease;
         slot.data.cooldown = Mathf.Max(0.1f, slot.data.cooldown - cooldownDecrease);
-        slot.currentDamage = slot.data.baseDamage + CharacterStats.Instance.attackDamage.GetValue();
+        slot.currentDamage = slot.data.baseDamage + PlayerStatsManager.Instance.attackDamage.GetValue();
         return true;
     }
 }

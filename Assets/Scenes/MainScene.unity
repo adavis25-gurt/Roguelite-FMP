@@ -885,11 +885,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e6fe40137be1a46b414b7c8545be2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectSpawner: {fileID: 510407975}
-  seconds: 55
-  minutes: 15
+  seconds: 0
+  minutes: 0
   player: {fileID: 622401775}
-  shopSpawn: {fileID: 0}
   enemies: {fileID: 1384621114}
 --- !u!4 &572201891
 Transform:
@@ -6184,6 +6182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963783568}
   - component: {fileID: 963783567}
+  - component: {fileID: 963783569}
   m_Layer: 0
   m_Name: TerrainGenerator
   m_TagString: Untagged
@@ -6203,9 +6202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3bc6669ba31c54a9c6e1cf180e92ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TerrainGenerator
+  terrainObjectSpawner: {fileID: 963783569}
   blockPrefab: {fileID: 2644086623416676604, guid: 47edd3f0c8400ad428971d214be501e2, type: 3}
   wallPrefab: {fileID: 8120265535461468384, guid: 74ad25d42918f6b4abb03bde112badc2, type: 3}
-  mapSize: 50
+  mapSize: 30
   hilliness: 0.3
 --- !u!4 &963783568
 Transform:
@@ -6222,6 +6222,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963783569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963783566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6361886e0c355cab4a574b1e1966b555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treePrefabs:
+  - {fileID: 4873889323582956705, guid: c7c9624d8fbf72e42a67ed077298680f, type: 3}
+  stonePrefabs:
+  - {fileID: 4213975694405878421, guid: 3803a9e601de1734a9ac1783e580ffa1, type: 3}
 --- !u!1 &964857431
 GameObject:
   m_ObjectHideFlags: 0

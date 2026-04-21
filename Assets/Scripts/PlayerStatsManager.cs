@@ -8,20 +8,25 @@ public class PlayerStatsManager : MonoBehaviour
 
     [SerializeField] GameObject playerObj;
 
-    public int level = 0;
-    public float currentEXP = 0f;
-    public float expRequired = 100f;
-
     public Stat health = new Stat(100f);
+    public Stat attackDamage = new Stat(10f);
+    public Stat attackSpeed = new Stat(1f);
+    public Stat defense = new Stat(5f);
+    public Stat jumpPower = new Stat(8f);
+    public Stat moveSpeed = new Stat(16f);
+    public Stat jumpAmount = new Stat(1f);
+    public Stat expMultiplier = new Stat(1f);
+    public Stat CritChance = new Stat(2.5f);
+    public Stat CritDamage = new Stat(50f);
+    public Stat projectileCount = new Stat(1f);
 
     public float currentHealth;
-
-    PlayerMovement playerMove;
 
     bool canTakeDamage = true;
     public int coins;
 
     [SerializeField] Teleporter teleporter;
+
     void Awake()
     {
         if (Instance == null)
@@ -37,37 +42,56 @@ public class PlayerStatsManager : MonoBehaviour
 
     private void Start()
     {
+        currentHealth = health.GetValue();
     }
 
-    private void Update()
+    public void RestoreHealth()
     {
-        if (health.GetValue() <= 0)
-        {
-            Die();
-        }
+        currentHealth = health.GetValue();
     }
 
-    public void AddExp(float amount)
+    public void ApplyItem(ItemData data)
     {
-        currentEXP += (amount * CharacterStats.Instance.expMultiplier.GetValue());
+        StatModifier modifier = new StatModifier(data.value, data.modifierType);
 
-        while (currentEXP >= expRequired)
+        switch (data.statType)
         {
-            currentEXP -= expRequired;
-            LevelUp();
+            case StatType.Health:
+                health.AddModifier(modifier);
+                break;
+            case StatType.AttackDamage:
+                attackDamage.AddModifier(modifier);
+                break;
+            case StatType.AttackSpeed:
+                attackSpeed.AddModifier(modifier);
+                break;
+            case StatType.Defense:
+                defense.AddModifier(modifier);
+                break;
+            case StatType.JumpPower:
+                jumpPower.AddModifier(modifier);
+                break;
+            case StatType.MoveSpeed:
+                moveSpeed.AddModifier(modifier);
+                break;
+            case StatType.JumpAmount:
+                jumpAmount.AddModifier(modifier);
+                break;
+            case StatType.ExpMultiplier:
+                expMultiplier.AddModifier(modifier);
+                break;
+            case StatType.CritChance:
+                CritChance.AddModifier(modifier);
+                break;
+            case StatType.CritDamage:
+                CritDamage.AddModifier(modifier);
+                break;
         }
     }
 
     public void AddCoins(int amount)
     {
         coins += amount;
-    }
-
-    private void LevelUp()
-    {
-        level++;
-        health.baseValue += 50f;
-        expRequired *= 1.05f;
     }
 
     void Die()
@@ -82,14 +106,9 @@ public class PlayerStatsManager : MonoBehaviour
     public void doDamage(int amount)
     {
         if (!canTakeDamage) return;
-        if (amount >= currentHealth)
-        {
-            Die();
-        }
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            print("DEAD");
             Die();
         }
     }
