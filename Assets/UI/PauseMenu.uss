@@ -19,16 +19,16 @@
     flex-direction: column;
     flex-wrap: nowrap;
     margin-top: 19px;
-    translate: 0 293px;
-    background-color: rgb(118, 165, 180);
+    translate: 0 200px;
+    background-color: rgb(130, 130, 130);
     border-top-width: 6px;
     border-bottom-width: 6px;
     border-left-width: 6px;
     border-right-width: 6px;
-    border-top-color: rgb(52, 120, 147);
-    border-right-color: rgb(52, 120, 147);
-    border-bottom-color: rgb(52, 120, 147);
-    border-left-color: rgb(52, 120, 147);
+    border-top-color: rgb(77, 77, 77);
+    border-right-color: rgb(77, 77, 77);
+    border-bottom-color: rgb(77, 77, 77);
+    border-left-color: rgb(77, 77, 77);
     margin-right: 50px;
     margin-left: 50px;
     -unity-font-definition: url("project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&guid=b6db1521497d36546be41a6c0a53da86&type=3#munro-small");
@@ -40,4 +40,13 @@
 
 .hide {
     visibility: hidden;
+}
+
+.unity-button:hover {
+    scale: 1.05 1.025;
+}
+
+.unity-button:hover:active {
+    scale: 0.95 0.975;
+    background-color: rgb(105, 105, 105);
 }
