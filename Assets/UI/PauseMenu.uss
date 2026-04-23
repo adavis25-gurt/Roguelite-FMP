@@ -50,3 +50,9 @@
     scale: 0.95 0.975;
     background-color: rgb(105, 105, 105);
 }
+
+.hide {
+    opacity: 1;
+    visibility: hidden;
+    display: none;
+}

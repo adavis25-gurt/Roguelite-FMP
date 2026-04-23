@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PauseManager : MonoBehaviour
 {
@@ -18,15 +19,23 @@ public class PauseManager : MonoBehaviour
 
     void OnPause(InputAction.CallbackContext context)
     {
-        pauseUi.enabled = !(pauseUi.enabled);
-        if (pauseUi.enabled) 
+        if (pauseUi == null)
         {
+            pauseUi = GameObject.Find("PauseUI").GetComponent<UIDocument>();
+        }
+        var panel = pauseUi.rootVisualElement.Q<VisualElement>("Panel");
+        if (panel.ClassListContains("hide")) 
+        {
+            print("yea");
+            panel.RemoveFromClassList("hide");
             Time.timeScale = 0;
             UnityEngine.Cursor.visible = true;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
         }
         else
         {
+            print("mnah");
+            panel.AddToClassList("hide");
             Time.timeScale = 1;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
@@ -35,19 +44,31 @@ public class PauseManager : MonoBehaviour
 
     public void TogglePause()
     {
-        print(pauseUi.isActiveAndEnabled);
-        pauseUi.enabled = !(pauseUi.enabled);
-        if (pauseUi.enabled)
+        var panel = pauseUi.rootVisualElement.Q<VisualElement>("Panel");
+        if (panel.ClassListContains("hide"))
         {
+            print("yea");
+            panel.RemoveFromClassList("hide");
             Time.timeScale = 0;
             UnityEngine.Cursor.visible = true;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
         }
         else
         {
+            print("mnah");
+            panel.AddToClassList("hide");
             Time.timeScale = 1;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
         }
+    }
+
+    public void ForceOff()
+    {
+        var panel = pauseUi.rootVisualElement.Q<VisualElement>("Panel");
+        panel.AddToClassList("hide");
+        Time.timeScale = 1;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
     }
 }

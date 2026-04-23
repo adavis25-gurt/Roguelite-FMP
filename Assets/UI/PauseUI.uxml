@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/PauseMenu.uss?fileID=7433441132597879392&amp;guid=fdb1f5260463c6847b0544c4563f57a4&amp;type=3#PauseMenu" />
-    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1;">
+    <ui:VisualElement name="Panel" class="panel hide" style="flex-grow: 1;">
         <ui:VisualElement name="Container" class="menu" style="flex-grow: 0.85; scale: 1 1; flex-shrink: 1; flex-basis: auto; align-items: stretch; width: 648px; translate: 636px 69px; background-size: 100% 76%; -unity-slice-top: -55; background-color: rgba(0, 0, 0, 0.59);">
             <ui:Button text="RESUME" name="Resume" />
             <ui:Button text="SETTINGS" name="Settings" />

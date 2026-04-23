@@ -388,7 +388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324814883}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 324814883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c75b2aa3b19f9f642b3f334187c7eae3, type: 3}
+  m_Script: {fileID: 11500000, guid: ce86c51213a75ed4a94d241f39a57b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 622401783}
@@ -959,7 +959,6 @@ GameObject:
   - component: {fileID: 622401779}
   - component: {fileID: 622401778}
   - component: {fileID: 622401777}
-  - component: {fileID: 622401781}
   - component: {fileID: 622401782}
   - component: {fileID: 622401783}
   m_Layer: 7
@@ -1086,18 +1085,6 @@ MonoBehaviour:
   orientation: {fileID: 1682498810}
   fallMultiplier: 3
   airControlMultiplier: 1
---- !u!114 &622401781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 622401775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 539e4634527899d40a210e6431c08247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &622401782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6697,6 +6684,7 @@ GameObject:
   - component: {fileID: 1164638160}
   - component: {fileID: 1164638159}
   - component: {fileID: 1164638165}
+  - component: {fileID: 1164638166}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -6968,6 +6956,19 @@ MonoBehaviour:
     NearLimit: 5
     FarLimit: 30
     MaxQualityBoost: 0.2
+--- !u!114 &1164638166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164638158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270f8884abfb00b4ea4bc85d140764f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAtTarget: {fileID: 132462910}
 --- !u!1 &1277512513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4908888856049078515, guid: a79d5d7c27cad65438e5e552c75403fb, type: 3}

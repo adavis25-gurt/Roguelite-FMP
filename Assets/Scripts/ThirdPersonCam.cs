@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,7 @@ public class ThirdPersonCam : MonoBehaviour
     [SerializeField] Transform playerObj;
     [SerializeField] Rigidbody rb;
     [SerializeField] float rotationSpeed;
+    
 
     PlayerInput playerInput;
     InputAction moveAction;
@@ -23,10 +25,20 @@ public class ThirdPersonCam : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     void Update()
     {
+        if (orientation == null || player == null || playerObj == null || rb == null)
+        {
+            orientation = GameObject.Find("Orientation").transform;
+            player = GameObject.Find("Player").transform;
+            playerObj = GameObject.Find("PlayerObj").transform;
+            rb = player.GetComponent<Rigidbody>();
+        }
+
+
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientation.forward = viewDir.normalized;
 
