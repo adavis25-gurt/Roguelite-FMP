@@ -1,7 +1,4 @@
 .panel {
-    background-color: rgb(60, 59, 59);
-    align-items: flex-start;
-    border-left-width: 0;
 }
 
 .menu {
