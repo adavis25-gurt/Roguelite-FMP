@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject[] enemyPrefabs;
     [SerializeField] Transform player;
     [SerializeField] Timer timer;
 
@@ -38,7 +38,9 @@ public class ObjectSpawner : MonoBehaviour
         float t = timer.minutes + (timer.seconds / 60f);
         int count = Mathf.FloorToInt(baseSpawnCount * Mathf.Pow(t + 1f, spawnCountExponent));
         for (int i = 0; i < count; i++)
+        {
             SpawnEnemy();
+        }
     }
 
     void SpawnEnemy()
@@ -46,7 +48,8 @@ public class ObjectSpawner : MonoBehaviour
         Vector2 randomCircle = Random.insideUnitCircle.normalized * spawnRadius;
         Vector3 spawnPos = player.position + new Vector3(randomCircle.x, 0f, randomCircle.y);
 
-        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity, enemies.transform);
+        int rand = Random.Range(0, enemyPrefabs.Length);
+        GameObject enemy = Instantiate(enemyPrefabs[rand], spawnPos, Quaternion.identity, enemies.transform);
 
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
         if (stats != null) stats.timer = timer;

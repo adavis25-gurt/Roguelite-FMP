@@ -22,6 +22,7 @@ public class EnemyStats : MonoBehaviour
 
     void Start()
     {
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
         float t = timer.minutes + (timer.seconds / 60f);
         currentHealth = baseHealth * (1f + t * healthGrowthRate);
     }

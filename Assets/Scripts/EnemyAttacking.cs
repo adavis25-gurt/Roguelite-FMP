@@ -11,6 +11,7 @@ public class EnemyAttacking : MonoBehaviour
 
     void Awake()
     {
+        playerObj = GameObject.Find("Player");
         stats = GetComponent<EnemyStats>();
     }
 
@@ -20,6 +21,7 @@ public class EnemyAttacking : MonoBehaviour
         {
             float step = stats.speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, step);
+            transform.LookAt(playerObj.transform.position);
         }
     }
 

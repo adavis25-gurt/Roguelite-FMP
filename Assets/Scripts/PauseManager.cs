@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
-using static UnityEngine.Rendering.DebugUI;
-
+using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     PlayerInput playerInput;
@@ -31,6 +30,10 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 0;
             UnityEngine.Cursor.visible = true;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
+            if (SceneManager.GetActiveScene().name == "TherapyRoom")
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = false;
+            }
         }
         else
         {
@@ -39,6 +42,10 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 1;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
+            if (SceneManager.GetActiveScene().name == "TherapyRoom")
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = true;
+            }
         }
     }
 
@@ -52,6 +59,10 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 0;
             UnityEngine.Cursor.visible = true;
             UnityEngine.Cursor.lockState = CursorLockMode.None;
+            if (SceneManager.GetActiveScene().name == "TherapyRoom")
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = false;
+            }
         }
         else
         {
@@ -60,6 +71,10 @@ public class PauseManager : MonoBehaviour
             Time.timeScale = 1;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
             UnityEngine.Cursor.visible = false;
+            if (SceneManager.GetActiveScene().name == "TherapyRoom")
+            {
+                GameObject.Find("Main Camera").GetComponent<CameraController>().enabled = true;
+            }
         }
     }
 
