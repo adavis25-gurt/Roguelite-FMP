@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1343429366}
-  interactionDistance: 2
+  interactionDistance: 3
   interactionUI: {fileID: 486089600}
   interactionText: {fileID: 276889995}
   lastHitObject: {fileID: 0}
