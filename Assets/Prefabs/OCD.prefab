@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OCD
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c8d3ab71909f3f439f99ff54e116877, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -152,6 +156,7 @@ MonoBehaviour:
   damageGrowthRate: 0.3
   speedGrowthRate: 2
   timer: {fileID: 0}
+  currentHealth: 0
 --- !u!114 &7029634141450788724
 MonoBehaviour:
   m_ObjectHideFlags: 0

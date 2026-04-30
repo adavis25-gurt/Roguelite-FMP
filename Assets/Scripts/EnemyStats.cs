@@ -15,7 +15,7 @@ public class EnemyStats : MonoBehaviour
 
     public Timer timer;
 
-    float currentHealth;
+    public float currentHealth;
 
     public float damage { get; private set; }
     public float speed { get; private set; }

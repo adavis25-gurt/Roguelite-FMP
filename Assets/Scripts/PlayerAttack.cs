@@ -31,6 +31,8 @@ public class PlayerAttack : MonoBehaviour
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
         if (!stats) return;
         stats.TakeDamage(slot.currentDamage);
+        print("YEA DAMAGE DONE HAHAHAHA");
+        print(stats.currentHealth);
     }
 
     void Update()

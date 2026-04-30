@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ANXIIDTIY
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11a8468e625fb3b43bed86d53a1ef33d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -152,6 +156,7 @@ MonoBehaviour:
   damageGrowthRate: 0.3
   speedGrowthRate: 2
   timer: {fileID: 0}
+  currentHealth: 0
 --- !u!114 &8692836619593401913
 MonoBehaviour:
   m_ObjectHideFlags: 0

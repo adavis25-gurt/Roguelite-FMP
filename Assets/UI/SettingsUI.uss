@@ -55,6 +55,26 @@
     font-size: 65px;
 }
 
+#Resolution .unity-base-field__label {
+    font-size: 80px;
+}
+
+#Resolution .unity-base-popup-field__text {
+    font-size: 40px;
+}
+
+.unity-base-dropdown__item {
+    font-size: 25px;
+}
+
+.unity-base-dropdown__label {
+    font-size: 25px;
+}
+
+.unity-base-dropdown {
+    min-width: 500px;
+}
+
 #HighQuality:hover {
     scale: 1.1 1.1;
     background-color: rgb(224, 71, 71);
@@ -119,4 +139,26 @@
     border-right-color: rgb(53, 142, 45);
     border-top-color: rgb(53, 142, 45);
     border-bottom-color: rgb(53, 142, 45);
+}
+
+#ExitButton:hover {
+    scale: 1.1 1.1;
+    background-color: rgb(132, 41, 41);
+    border-left-color: rgb(87, 43, 43);
+    border-right-color: rgb(87, 43, 43);
+    border-top-color: rgb(87, 43, 43);
+    border-bottom-color: rgb(87, 43, 43);
+    transition-property: scale;
+    transition-duration: 0.1s;
+}
+
+#ExitButton:hover:active {
+    scale: 0.9 0.9;
+    background-color: rgb(132, 41, 41);
+    border-left-color: rgb(87, 43, 43);
+    border-right-color: rgb(87, 43, 43);
+    border-top-color: rgb(87, 43, 43);
+    border-bottom-color: rgb(87, 43, 43);
+    transition-property: scale;
+    transition-duration: 0.1s;
 }

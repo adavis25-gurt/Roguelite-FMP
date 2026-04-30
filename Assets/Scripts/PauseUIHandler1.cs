@@ -8,6 +8,7 @@ public class PauseUIHandler : MonoBehaviour
 {
     [SerializeField] PauseManager pauseManager;
     [SerializeField] VisualElement ui;
+    [SerializeField] UIDocument SettingsUI;
 
     [SerializeField] Button ResumeButton;
     [SerializeField] Button SettingsButton;
@@ -47,7 +48,18 @@ public class PauseUIHandler : MonoBehaviour
 
     void OnSettingsButtonClicked(ClickEvent evt)
     {
-        print("ye go to settings chud");
+        var MainPanel = ui.Q<VisualElement>("Panel");
+        var SettingsPanel = SettingsUI.rootVisualElement.Q<VisualElement>("Panel");
+        if (SettingsPanel.ClassListContains("hide"))
+        {
+            MainPanel.AddToClassList("hide");
+            SettingsPanel.RemoveFromClassList("hide");
+        }
+        else
+        {
+            MainPanel.AddToClassList("hide");
+            SettingsPanel.RemoveFromClassList("hide");   
+        }
     }
 
     void OnExitButtonClicked(ClickEvent evt)

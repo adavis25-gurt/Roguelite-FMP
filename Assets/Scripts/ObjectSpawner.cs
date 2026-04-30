@@ -45,7 +45,7 @@ public class ObjectSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Vector2 randomCircle = Random.insideUnitCircle.normalized * spawnRadius;
+        Vector2 randomCircle = Random.insideUnitCircle * spawnRadius;
         Vector3 spawnPos = player.position + new Vector3(randomCircle.x, 0f, randomCircle.y);
 
         int rand = Random.Range(0, enemyPrefabs.Length);
