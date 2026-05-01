@@ -55,26 +55,6 @@
     font-size: 65px;
 }
 
-#Resolution .unity-base-field__label {
-    font-size: 80px;
-}
-
-#Resolution .unity-base-popup-field__text {
-    font-size: 40px;
-}
-
-.unity-base-dropdown__item {
-    font-size: 25px;
-}
-
-.unity-base-dropdown__label {
-    font-size: 25px;
-}
-
-.unity-base-dropdown {
-    min-width: 500px;
-}
-
 #HighQuality:hover {
     scale: 1.1 1.1;
     background-color: rgb(224, 71, 71);
@@ -162,3 +142,4 @@
     transition-property: scale;
     transition-duration: 0.1s;
 }
+

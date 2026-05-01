@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 public class SettingsController : MonoBehaviour
 {
@@ -18,9 +19,12 @@ public class SettingsController : MonoBehaviour
     [SerializeField] Toggle FullscreenToggle;
     [SerializeField] Toggle VSyncToggle;
 
+    Resolution[] AllResolutions;
+
     private void Awake()
     {
         ui = GetComponent<UIDocument>().rootVisualElement;
+        AllResolutions = Screen.resolutions;
     }
 
     private void OnEnable()
@@ -29,20 +33,12 @@ public class SettingsController : MonoBehaviour
         MasterVolumeSlider.RegisterValueChangedCallback(OnMasterVolumeChanged);
 
         ResolutionDropdown = ui.Q<DropdownField>("Resolution");
-        ResolutionDropdown.choices = new System.Collections.Generic.List<string>
+        List<string> resolutionStrings = new List<string>();
+        foreach (Resolution res in AllResolutions)
         {
-            "256 x 144",
-            "426 x 240",
-            "640 x 360",
-            "854 x 480",
-            "1280 x 720",
-            "1366 x 768",
-            "1600 x 900",
-            "1920 x 1080",
-            "2560 x 1440",
-            "3840 x 2160"
-        };
-        ResolutionDropdown.index = 7;
+            resolutionStrings.Add(res.ToString());
+        }
+        ResolutionDropdown.choices = resolutionStrings;
         ResolutionDropdown.RegisterValueChangedCallback(OnResolutionChanged);
 
         HighQualityButton = ui.Q<Button>("HighQuality");
