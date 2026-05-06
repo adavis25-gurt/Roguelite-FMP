@@ -12,6 +12,8 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] Button SettingsButton;
     [SerializeField] Button ExitButton;
 
+    [SerializeField] UIDocument SettingsUI;
+
     private void Awake()
     {
         ui = GetComponent<UIDocument>().rootVisualElement;
@@ -36,7 +38,18 @@ public class MainMenuController : MonoBehaviour
 
     void OnSettingsButtonClicked()
     {
-        print("ye go to settings chud");
+        var MainPanel = ui.Q<VisualElement>("Panel");
+        var SettingsPanel = SettingsUI.rootVisualElement.Q<VisualElement>("Panel");
+        if (SettingsPanel.ClassListContains("hide"))
+        {
+            MainPanel.AddToClassList("hide");
+            SettingsPanel.RemoveFromClassList("hide");
+        }
+        else
+        {
+            MainPanel.AddToClassList("hide");
+            SettingsPanel.RemoveFromClassList("hide");
+        }
     }
 
     void OnExitButtonClicked()

@@ -921,8 +921,8 @@ MonoBehaviour:
   timer: {fileID: 572201890}
   spawnRadius: 75
   spawnInterval: 3
-  baseSpawnCount: 5
-  spawnCountExponent: 1.15
+  baseSpawnCount: 15
+  spawnCountExponent: 1.5
   enemies: {fileID: 1384621114}
   paused: 0
 --- !u!4 &510407976
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 0
-  minutes: 0
+  minutes: 10
   player: {fileID: 622401775}
   enemies: {fileID: 1384621114}
 --- !u!4 &572201891
@@ -7276,6 +7276,9 @@ MonoBehaviour:
   playerObj: {fileID: 622401775}
   currentHealth: 0
   coins: 0
+  timesInTherapyRoom: 0
+  increaseColor: {fileID: 0}
+  increaseColorTherapyRoom: {fileID: 0}
   teleporter: {fileID: 0}
 --- !u!4 &2140346785
 Transform:

@@ -25,6 +25,11 @@ public class PlayerStatsManager : MonoBehaviour
     bool canTakeDamage = true;
     public int coins;
 
+    public int timesInTherapyRoom = 0;
+
+    public IncreaseColor increaseColor;
+    public IncreaseColor increaseColorTherapyRoom;
+
     [SerializeField] Teleporter teleporter;
 
     void Awake()
@@ -100,6 +105,10 @@ public class PlayerStatsManager : MonoBehaviour
         playerObj.gameObject.SetActive(false);
         SceneManager.LoadScene("TherapyRoom");
         teleporter.passPlayerIn(playerObj);
+        timesInTherapyRoom += 1;
+        increaseColor.Increase(0.17f);
+        increaseColorTherapyRoom = GameObject.Find("BlackAndWhite").gameObject.GetComponent<IncreaseColor>();
+        increaseColorTherapyRoom.Increase(0.17f);
     }
 
     public void doDamage(int amount)
