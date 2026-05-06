@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 243466960}
   - component: {fileID: 243466961}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,9 +1239,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1839788994}
   - {fileID: 486089601}
   - {fileID: 1726537077}
-  - {fileID: 1839788994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

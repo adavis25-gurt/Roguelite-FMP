@@ -10,6 +10,7 @@ public class CinemachineScript : MonoBehaviour
         if (lookAtTarget == null)
         {
             lookAtTarget = GameObject.Find("PlayerObj").transform;
+            return;
         }
         GetComponent<CinemachineCamera>().Follow = lookAtTarget;   
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class PlayerStatsManager : MonoBehaviour
 {
@@ -29,8 +30,6 @@ public class PlayerStatsManager : MonoBehaviour
 
     public IncreaseColor increaseColor;
     public IncreaseColor increaseColorTherapyRoom;
-
-    [SerializeField] Teleporter teleporter;
 
     void Awake()
     {
@@ -104,9 +103,9 @@ public class PlayerStatsManager : MonoBehaviour
         Cursor.visible = true;
         playerObj.gameObject.SetActive(false);
         SceneManager.LoadScene("TherapyRoom");
-        teleporter.passPlayerIn(playerObj);
         timesInTherapyRoom += 1;
         increaseColor.Increase(0.17f);
+        Thread.Sleep(50);
         increaseColorTherapyRoom = GameObject.Find("BlackAndWhite").gameObject.GetComponent<IncreaseColor>();
         increaseColorTherapyRoom.Increase(0.17f);
     }

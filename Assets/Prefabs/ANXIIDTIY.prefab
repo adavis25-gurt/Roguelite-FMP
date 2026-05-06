@@ -151,7 +151,7 @@ MonoBehaviour:
   baseXPReward: 20
   baseCoinReward: 50
   baseDamage: 5
-  baseSpeed: 3
+  baseSpeed: 10
   healthGrowthRate: 0.3
   damageGrowthRate: 0.3
   speedGrowthRate: 2
