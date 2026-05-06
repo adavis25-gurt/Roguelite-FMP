@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/SettingsUI.uss?fileID=7433441132597879392&amp;guid=257b370fca50af90197f2034c8ab609f&amp;type=3#SettingsUI" />
-    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1;">
+    <ui:VisualElement name="Panel" class="panel hide" style="flex-grow: 1;">
         <ui:VisualElement name="Container" class="menu">
             <ui:Label text="Audio" name="AudioHeader" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); color: rgb(255, 255, 255); -unity-text-align: upper-center; font-size: 100px;" />
             <ui:Slider label="Master Volume" value="42" high-value="100" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); margin-left: 20px; margin-right: 20px; margin-bottom: 40px; margin-top: 40px;" />
