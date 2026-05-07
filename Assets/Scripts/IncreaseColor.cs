@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class IncreaseColor : MonoBehaviour
 {
     public RawImage Screen;
-    float amount = 0f;
 
     public void Increase(float amount)
     {

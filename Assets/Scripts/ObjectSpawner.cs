@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] enemyPrefabs;
-    [SerializeField] Transform player;
+    public Transform player;
     [SerializeField] Timer timer;
 
     [SerializeField] float spawnRadius = 20f;

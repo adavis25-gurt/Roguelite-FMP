@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class EnemyStats : MonoBehaviour
 {
     [SerializeField] float baseHealth = 30f;
-    [SerializeField] float baseXPReward = 20f;
     [SerializeField] int baseCoinReward = 50;
     [SerializeField] float baseDamage = 20f;
     [SerializeField] float baseSpeed = 3f;

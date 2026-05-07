@@ -102,12 +102,9 @@ public class PlayerStatsManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         playerObj.gameObject.SetActive(false);
-        SceneManager.LoadScene("TherapyRoom");
-        timesInTherapyRoom += 1;
         increaseColor.Increase(0.17f);
-        Thread.Sleep(50);
-        increaseColorTherapyRoom = GameObject.Find("BlackAndWhite").gameObject.GetComponent<IncreaseColor>();
-        increaseColorTherapyRoom.Increase(0.17f);
+        SceneManager.LoadSceneAsync("TherapyRoom");
+        timesInTherapyRoom += 1;
     }
 
     public void doDamage(int amount)

@@ -3,7 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
+    [SerializeField] GameObject player;
+
     public static Loader Instance { get; private set; }
+    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
 
     void Awake()
     {
@@ -17,12 +25,27 @@ public class Loader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void EnablePlayer(GameObject Player)
+    
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (SceneManager.GetActiveScene().name == "Main Scene")
+        if (scene.name == "MainScene")
         {
-            Player.SetActive(true); 
+            player.SetActive(true);
+            var spawner = GameObject.Find("Spawner");
+            spawner.GetComponent<ObjectSpawner>().player = player.transform;
+            var playerstatsmanager = GameObject.Find("PlayerStats");
+            playerstatsmanager.GetComponent<PlayerStatsManager>().currentHealth = playerstatsmanager.GetComponent<PlayerStatsManager>().health.GetValue();
+            playerstatsmanager.GetComponent<PlayerStatsManager>().increaseColor = GameObject.Find("RawImage").GetComponent<IncreaseColor>();
         }
+        else if (scene.name == "TherapyRoom")
+        {
+            float colorAmount = GameObject.Find("BlackAndWhite").GetComponent<Renderer>().material.GetFloat("_ColorAmount");
+            var greyscale = GameObject.Find("BlackAndWhite").GetComponent<Renderer>().material;
+            greyscale.SetFloat("_ColorAmount", colorAmount += 0.17f);
+        }
+
+        print(scene.name);
     }
 }
 
