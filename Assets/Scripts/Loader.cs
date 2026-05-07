@@ -1,9 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Loader : MonoBehaviour
 {
     [SerializeField] GameObject player;
+
+    public Material greyscaleMain;
+    public Material greyscaleTherapyRoom;
+
+    float color = 0;
 
     public static Loader Instance { get; private set; }
     
@@ -36,13 +42,18 @@ public class Loader : MonoBehaviour
             spawner.GetComponent<ObjectSpawner>().player = player.transform;
             var playerstatsmanager = GameObject.Find("PlayerStats");
             playerstatsmanager.GetComponent<PlayerStatsManager>().currentHealth = playerstatsmanager.GetComponent<PlayerStatsManager>().health.GetValue();
-            playerstatsmanager.GetComponent<PlayerStatsManager>().increaseColor = GameObject.Find("RawImage").GetComponent<IncreaseColor>();
+            greyscaleMain = GameObject.Find("RawImage").GetComponent<RawImage>().material;
+            greyscaleMain.SetFloat("_ColorAmount", color);
+            print(greyscaleMain.GetFloat("_ColorAmount"));
+            playerstatsmanager.GetComponent<PlayerStatsManager>().canTakeDamage = true;
+
         }
         else if (scene.name == "TherapyRoom")
         {
-            float colorAmount = GameObject.Find("BlackAndWhite").GetComponent<Renderer>().material.GetFloat("_ColorAmount");
-            var greyscale = GameObject.Find("BlackAndWhite").GetComponent<Renderer>().material;
-            greyscale.SetFloat("_ColorAmount", colorAmount += 0.17f);
+            color += 0.17f;
+            greyscaleTherapyRoom = GameObject.Find("BlackAndWhite").GetComponent<RawImage>().material;
+            greyscaleTherapyRoom.SetFloat("_ColorAmount", color);
+            print(greyscaleMain.GetFloat("_ColorAmount"));
         }
 
         print(scene.name);

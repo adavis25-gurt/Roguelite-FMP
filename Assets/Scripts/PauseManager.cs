@@ -25,7 +25,6 @@ public class PauseManager : MonoBehaviour
         var panel = pauseUi.rootVisualElement.Q<VisualElement>("Panel");
         if (panel.ClassListContains("hide")) 
         {
-            print("yea");
             panel.RemoveFromClassList("hide");
             Time.timeScale = 0;
             UnityEngine.Cursor.visible = true;
@@ -37,7 +36,6 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
-            print("mnah");
             panel.AddToClassList("hide");
             Time.timeScale = 1;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
@@ -54,7 +52,6 @@ public class PauseManager : MonoBehaviour
         var panel = pauseUi.rootVisualElement.Q<VisualElement>("Panel");
         if (panel.ClassListContains("hide"))
         {
-            print("yea");
             panel.RemoveFromClassList("hide");
             Time.timeScale = 0;
             UnityEngine.Cursor.visible = true;
@@ -66,7 +63,6 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
-            print("mnah");
             panel.AddToClassList("hide");
             Time.timeScale = 1;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;

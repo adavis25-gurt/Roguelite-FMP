@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 622401775}
+  greyscaleMain: {fileID: 0}
+  greyscaleTherapyRoom: {fileID: 0}
 --- !u!4 &73473370
 Transform:
   m_ObjectHideFlags: 0
@@ -7315,10 +7317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObj: {fileID: 622401775}
   currentHealth: 0
+  canTakeDamage: 1
   coins: 0
   timesInTherapyRoom: 0
-  increaseColor: {fileID: 1075634400}
-  increaseColorTherapyRoom: {fileID: 0}
 --- !u!4 &2140346785
 Transform:
   m_ObjectHideFlags: 0

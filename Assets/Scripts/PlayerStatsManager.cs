@@ -23,13 +23,10 @@ public class PlayerStatsManager : MonoBehaviour
 
     public float currentHealth;
 
-    bool canTakeDamage = true;
+    public bool canTakeDamage = true;
     public int coins;
 
     public int timesInTherapyRoom = 0;
-
-    public IncreaseColor increaseColor;
-    public IncreaseColor increaseColorTherapyRoom;
 
     void Awake()
     {
@@ -102,7 +99,6 @@ public class PlayerStatsManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         playerObj.gameObject.SetActive(false);
-        increaseColor.Increase(0.17f);
         SceneManager.LoadSceneAsync("TherapyRoom");
         timesInTherapyRoom += 1;
     }
@@ -120,9 +116,7 @@ public class PlayerStatsManager : MonoBehaviour
     public IEnumerator iFrameLogic()
     {
         canTakeDamage = false;
-        print("cant take damage");
         yield return new WaitForSeconds(0.5f);
-        print("can take damage");
         canTakeDamage = true;
     }
 }
