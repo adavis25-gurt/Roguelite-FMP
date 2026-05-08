@@ -1,3 +1,6 @@
+using System.Collections;
+using Unity.Mathematics;
+using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -44,9 +47,8 @@ public class Loader : MonoBehaviour
             playerstatsmanager.GetComponent<PlayerStatsManager>().currentHealth = playerstatsmanager.GetComponent<PlayerStatsManager>().health.GetValue();
             greyscaleMain = GameObject.Find("RawImage").GetComponent<RawImage>().material;
             greyscaleMain.SetFloat("_ColorAmount", color);
-            print(greyscaleMain.GetFloat("_ColorAmount"));
             playerstatsmanager.GetComponent<PlayerStatsManager>().canTakeDamage = true;
-
+            StartCoroutine(LateStart(0.1f));
         }
         else if (scene.name == "TherapyRoom")
         {
@@ -58,5 +60,18 @@ public class Loader : MonoBehaviour
 
         print(scene.name);
     }
+
+    IEnumerator LateStart(float waitForSeconds)
+    {
+        yield return new WaitForSeconds(waitForSeconds);
+        player.transform.gameObject.SetActive(false);
+        var terrainGen = GameObject.Find("TerrainGenerator");
+        var TerrainGeneratorScript = terrainGen.GetComponent<TerrainGenerator>();
+        Vector3 Position = (TerrainGeneratorScript.GetGridElement(TerrainGeneratorScript.mapSize / 2, TerrainGeneratorScript.mapSize / 2).transform.position + Vector3.up * 10f);
+        print(TerrainGeneratorScript.GetGridElement(TerrainGeneratorScript.mapSize / 2, TerrainGeneratorScript.mapSize / 2));
+        player.transform.position = Position;
+        player.transform.gameObject.SetActive(true);
+    }
+
 }
 

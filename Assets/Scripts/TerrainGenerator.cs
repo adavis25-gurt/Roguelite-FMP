@@ -7,7 +7,7 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] GridElement blockPrefab;
     [SerializeField] GameObject wallPrefab;
 
-    [SerializeField] int mapSize;
+    public int mapSize = 40;
     [Range(0, 1f)] [SerializeField] float hilliness = 0.5f;
 
     const float horizontalBlockSpacing = 20f;
