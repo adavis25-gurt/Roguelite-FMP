@@ -16,3 +16,4 @@ MonoBehaviour:
   baseDamage: 10
   cooldown: 2
   attackDistance: 30
+  projectilePrefab: {fileID: 6580328626818573198, guid: 2d887dab49703ee5d97fb734f063ace8, type: 3}

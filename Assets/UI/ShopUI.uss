@@ -51,3 +51,9 @@
     transition-property: scale;
     transition-duration: 0.2s;
 }
+
+.hide {
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+}

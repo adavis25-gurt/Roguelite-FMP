@@ -968,8 +968,8 @@ MonoBehaviour:
   timer: {fileID: 572201890}
   spawnRadius: 75
   spawnInterval: 3
-  baseSpawnCount: 15
-  spawnCountExponent: 1.5
+  baseSpawnCount: 5
+  spawnCountExponent: 1.2
   enemies: {fileID: 1384621114}
   paused: 0
 --- !u!4 &510407976
@@ -1217,14 +1217,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   playerObject: {fileID: 622401775}
-  weapons:
-  - data: {fileID: 11400000, guid: bf1a10cd22696f048960f967e04aa753, type: 2}
-    cooldownTimer: 0
-    currentDamage: 0
-  - data: {fileID: 11400000, guid: 80f613e31dedd31448e1373c77a78f4b, type: 2}
-    cooldownTimer: 0
-    currentDamage: 0
-  - data: {fileID: 11400000, guid: 2a9fc287b66e87543b6ae89de565b4aa, type: 2}
+  weapon:
+    data: {fileID: 11400000, guid: bf1a10cd22696f048960f967e04aa753, type: 2}
     cooldownTimer: 0
     currentDamage: 0
 --- !u!114 &622401783
@@ -7316,6 +7310,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObj: {fileID: 622401775}
+  health:
+    baseValue: 100
+    currentValue: 100
+  attackDamage:
+    baseValue: 10
+    currentValue: 10
+  attackSpeed:
+    baseValue: 1
+    currentValue: 1
+  defense:
+    baseValue: 5
+    currentValue: 5
+  jumpPower:
+    baseValue: 8
+    currentValue: 8
+  moveSpeed:
+    baseValue: 16
+    currentValue: 16
+  jumpAmount:
+    baseValue: 1
+    currentValue: 1
+  expMultiplier:
+    baseValue: 1
+    currentValue: 1
+  CritChance:
+    baseValue: 2.5
+    currentValue: 2.5
+  CritDamage:
+    baseValue: 50
+    currentValue: 50
+  projectileCount:
+    baseValue: 1
+    currentValue: 1
   currentHealth: 0
   canTakeDamage: 1
   coins: 0

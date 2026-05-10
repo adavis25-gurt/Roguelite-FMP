@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MoneyBag
   m_EditorClassIdentifier: 
   itemName: MoneyBag
-  statType: 0
-  value: 0
-  modifierType: 0
+  statType: 12
+  value: 0.3
+  modifierType: 1

@@ -19,19 +19,23 @@ public class StatModifier
     }
 }
 
+[System.Serializable]
 public class Stat
 {
     public float baseValue;
+    [SerializeField] private float currentValue;
     private List<StatModifier> modifiers = new List<StatModifier>();
 
     public Stat(float baseValue)
     {
         this.baseValue = baseValue;
+        currentValue = baseValue;
     }
 
     public void AddModifier(StatModifier modifier)
     {
         modifiers.Add(modifier);
+        currentValue = GetValue();
     }
 
     public float GetValue()

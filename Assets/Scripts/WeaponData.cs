@@ -7,4 +7,5 @@ public class WeaponData : ScriptableObject
     public float baseDamage;
     public float cooldown;
     public float attackDistance;
+    public GameObject projectilePrefab;
 }

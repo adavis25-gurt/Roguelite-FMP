@@ -58,6 +58,7 @@ public class PlayerStatsManager : MonoBehaviour
         {
             case StatType.Health:
                 health.AddModifier(modifier);
+                currentHealth += data.value;
                 break;
             case StatType.AttackDamage:
                 attackDamage.AddModifier(modifier);
@@ -106,11 +107,9 @@ public class PlayerStatsManager : MonoBehaviour
     public void doDamage(int amount)
     {
         if (!canTakeDamage) return;
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        float reduced = Mathf.Max(1, amount - PlayerStatsManager.Instance.defense.GetValue());
+        currentHealth -= reduced;
+        if (currentHealth <= 0) Die();
     }
 
     public IEnumerator iFrameLogic()

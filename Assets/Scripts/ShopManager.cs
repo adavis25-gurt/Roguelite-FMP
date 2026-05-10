@@ -19,16 +19,4 @@ public class ShopManager : MonoBehaviour
         PlayerStatsManager.Instance.ApplyItem(data);
         return true;
     }
-
-    public bool UpgradeWeapon(WeaponSlot slot, int baseCost, float damageIncrease, float cooldownDecrease)
-    {
-        int cost = GetCost(baseCost);
-        if (PlayerStatsManager.Instance.coins < cost) return false;
-        PlayerStatsManager.Instance.coins -= cost;
-        purchaseCount++;
-        slot.data.baseDamage += damageIncrease;
-        slot.data.cooldown = Mathf.Max(0.1f, slot.data.cooldown - cooldownDecrease);
-        slot.currentDamage = slot.data.baseDamage + PlayerStatsManager.Instance.attackDamage.GetValue();
-        return true;
-    }
 }

@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHealth: 30
   baseCoinReward: 50
-  baseDamage: 20
+  baseDamage: 10
   baseSpeed: 10
   healthGrowthRate: 0.3
   damageGrowthRate: 0.3
