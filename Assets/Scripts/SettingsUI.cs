@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
+using System;
 
 public class SettingsController : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class SettingsController : MonoBehaviour
         List<string> resolutionStrings = new List<string>();
         foreach (Resolution res in AllResolutions)
         {
-            resolutionStrings.Add(res.ToString());
+            resolutionStrings.Add(res.width + "x" + res.height + "x" + res.refreshRateRatio);
         }
         ResolutionDropdown.choices = resolutionStrings;
         ResolutionDropdown.RegisterValueChangedCallback(OnResolutionChanged);
@@ -87,12 +88,13 @@ public class SettingsController : MonoBehaviour
 
     void OnMasterVolumeChanged(ChangeEvent<float> evt)
     {
-        Debug.Log($"Master Volume: {evt.newValue}");
+        AudioListener.volume = evt.newValue;
     }
 
     void OnResolutionChanged(ChangeEvent<string> evt)
     {
-        Debug.Log($"Resolution: {evt.newValue}");
+        string[] result = evt.newValue.Split('x');
+        Screen.SetResolution(Int32.Parse(result[0]), Int32.Parse(result[1]), FullScreenMode.ExclusiveFullScreen, Int32.Parse(result[2]));
     }
 
     void OnHighQualityClicked() => SetQualityByName("High Quality");
