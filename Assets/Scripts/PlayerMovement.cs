@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     InputAction moveAction;
     InputAction jumpAction;
     Rigidbody playerRigidbody;
+    Animator animator;
 
     int jumpsRemaining;
 
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidbody = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GameObject.Find("KENDRAFINAL").GetComponent<Animator>();
         moveAction = playerInput.actions.FindAction("Move");
         jumpAction = playerInput.actions.FindAction("Jump");
         jumpAction.performed += OnJump;
@@ -92,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 newVelocity = move.normalized * PlayerStatsManager.Instance.moveSpeed.GetValue();
             newVelocity.y = playerRigidbody.linearVelocity.y;
             playerRigidbody.linearVelocity = newVelocity;
+            animator.SetBool("IsMoving", true);
         }
         else
         {
@@ -103,6 +106,13 @@ public class PlayerMovement : MonoBehaviour
                 playerRigidbody.AddForce(move.normalized * PlayerStatsManager.Instance.moveSpeed.GetValue() * airControlMultiplier, ForceMode.VelocityChange);
             }
         }
+
+        if (move == Vector3.zero)
+        {
+            animator.SetBool("IsMoving", false);
+        }
+
+        print(animator.GetBool("IsMoving"));
     }
 
     void ApplyFallGravity()
