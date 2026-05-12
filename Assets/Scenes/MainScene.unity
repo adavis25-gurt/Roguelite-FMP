@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 5310442082774969031, guid: 5462d2bbd4cd207478a63e05ce9a2047, type: 3}
-  - {fileID: 7967740219672844606, guid: 4d80df815f1c485429ce7e6bfd866a8f, type: 3}
+  - {fileID: 6988250588025982186, guid: 07c572e9614c748418cf972063a01123, type: 3}
   - {fileID: 8709262435603635942, guid: 38e74325c1e7aef40ba2536d32245ddf, type: 3}
   player: {fileID: 622401776}
   timer: {fileID: 572201890}

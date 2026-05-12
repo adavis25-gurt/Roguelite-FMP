@@ -32,6 +32,7 @@ public class SettingsController : MonoBehaviour
     {
         MasterVolumeSlider = ui.Q<Slider>();
         MasterVolumeSlider.RegisterValueChangedCallback(OnMasterVolumeChanged);
+        AudioListener.volume = 0.5f;
 
         ResolutionDropdown = ui.Q<DropdownField>("Resolution");
         List<string> resolutionStrings = new List<string>();

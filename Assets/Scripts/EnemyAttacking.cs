@@ -6,6 +6,7 @@ public class EnemyAttacking : MonoBehaviour
 {
     [SerializeField] GameObject playerObj;
 
+    Animator animator;
     EnemyStats stats;
     bool paused = false;
 
@@ -13,6 +14,7 @@ public class EnemyAttacking : MonoBehaviour
     {
         playerObj = GameObject.Find("Player");
         stats = GetComponent<EnemyStats>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,7 +22,7 @@ public class EnemyAttacking : MonoBehaviour
         if (!paused)
         {
             float step = stats.speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, playerObj.transform.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, (playerObj.transform.position + new Vector3(0, 2f, 0)), step);
             transform.LookAt(playerObj.transform.position);
         }
     }
