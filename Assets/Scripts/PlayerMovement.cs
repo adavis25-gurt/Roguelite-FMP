@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRigidbody = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
-        animator = GameObject.Find("KENDRAFINAL").GetComponent<Animator>();
+        animator = GameObject.Find("Kendrarig").GetComponent<Animator>();
         moveAction = playerInput.actions.FindAction("Move");
         jumpAction = playerInput.actions.FindAction("Jump");
         jumpAction.performed += OnJump;
@@ -112,7 +112,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
 
-        print(animator.GetBool("IsMoving"));
+        //print(animator.GetBool("IsMoving"));
+        print(IsGrounded());
     }
 
     void ApplyFallGravity()
