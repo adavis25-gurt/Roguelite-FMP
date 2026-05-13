@@ -21,16 +21,17 @@ public class EnemyAttacking : MonoBehaviour
     {
         if (!paused)
         {
+            float rand = Random.Range(0, 1f);
             float step = stats.speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, (playerObj.transform.position + new Vector3(0, 2f, 0)), step);
+            transform.position = Vector3.MoveTowards(transform.position, (playerObj.transform.position + new Vector3(rand, 1f, rand)), step);
             transform.LookAt(playerObj.transform.position);
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
         if (paused) return;
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             PlayerStatsManager.Instance.doDamage((int)stats.damage);
             StartCoroutine(PlayerStatsManager.Instance.iFrameLogic());
