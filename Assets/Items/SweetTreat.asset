@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: Carrot
+  m_Name: SweetTreat
   m_EditorClassIdentifier: 
-  itemName: Carrot
-  statType: 5
-  value: 0.2
-  modifierType: 1
+  itemName: Sweet Treat
+  statType: 7
+  value: 1
+  modifierType: 0
+  Description: You feel like you can step on air!

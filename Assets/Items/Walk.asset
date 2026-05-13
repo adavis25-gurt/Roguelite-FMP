@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: Barbell
+  m_Name: Walk
   m_EditorClassIdentifier: 
-  itemName: Barbell
+  itemName: Go for a walk
   statType: 2
   value: 0.15
   modifierType: 1
+  Description: Building muscles!

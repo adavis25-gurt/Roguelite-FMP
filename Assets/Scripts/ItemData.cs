@@ -24,4 +24,5 @@ public class ItemData : ScriptableObject
     public StatType statType;
     public float value;
     public ModifierType modifierType;
+    public string Description;
 }

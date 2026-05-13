@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: Pills
+  m_Name: GoOutWFriends
   m_EditorClassIdentifier: 
-  itemName: Pill
-  statType: 1
-  value: 50
-  modifierType: 0
+  itemName: Go out with friends
+  statType: 4
+  value: 0.025
+  modifierType: 1
+  Description: Makes you stronger to external influence

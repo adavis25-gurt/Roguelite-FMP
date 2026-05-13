@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: RunningShoes
+  m_Name: BoxBreathing
   m_EditorClassIdentifier: 
-  itemName: Running Shoes
-  statType: 6
-  value: 0.05
+  itemName: Box breathing
+  statType: 5
+  value: 0.2
   modifierType: 1
+  Description: Puts a bit of spring in your step!

@@ -38,7 +38,7 @@ public class ShopUIController : MonoBehaviour
     private void AssignRandom(int index)
     {
         currentItems[index] = availableItems[Random.Range(0, availableItems.Length)];
-        itemLabels[index].text = $"{currentItems[index].itemName}\n{shopManager.GetCost(baseCost)} coins";
+        itemLabels[index].text = $"{currentItems[index].itemName}\n{shopManager.GetCost(baseCost)} coins\n\n{currentItems[index].Description}";
     }
 
     public void Open()

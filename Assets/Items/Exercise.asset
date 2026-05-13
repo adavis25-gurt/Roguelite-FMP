@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: HermesBoots
+  m_Name: Exercise
   m_EditorClassIdentifier: 
-  itemName: Hermes Boots
-  statType: 7
-  value: 1
-  modifierType: 0
+  itemName: Exercise
+  statType: 3
+  value: 0.15
+  modifierType: 1
+  Description: You can move your arms faster!

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: Chainmail
+  m_Name: Hobbies
   m_EditorClassIdentifier: 
-  itemName: Chainmail
-  statType: 4
-  value: 0.025
+  itemName: Pick up new hobbies
+  statType: 12
+  value: 0.3
   modifierType: 1
+  Description: You make money from hobbies!

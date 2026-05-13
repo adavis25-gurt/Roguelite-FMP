@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f595554e3f8f043b81d99e588397bf, type: 3}
-  m_Name: EnergyDrink
+  m_Name: Talking
   m_EditorClassIdentifier: 
-  itemName: Energy Drink
-  statType: 3
-  value: 0.15
+  itemName: Talk to someone
+  statType: 6
+  value: 0.05
   modifierType: 1
+  Description: You feel lighter
