@@ -1,20 +1,39 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FadeBlack : MonoBehaviour
 {
     [SerializeField] CanvasGroup CG;
 
-    public async Task<bool> FadeUI()
+    public async void FadeIn(string sceneName)
     {
+        CG = GameObject.Find("Canvas").GetComponent<CanvasGroup>();
+        print(CG.transform.parent);
+
         while (CG.alpha < 1f)
         {
-            CG.alpha += 0.5f * Time.deltaTime;
+            print(CG.alpha);
+            CG.alpha += 0.75f * Time.deltaTime;
             await Awaitable.NextFrameAsync();
+            print("ITS SUPPOSED TO WORK");
         }
 
         CG.alpha = 1f;
+
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public async Task<bool> FadeOut()
+    {
+        while (CG.alpha > 1f)
+        {
+            CG.alpha -= 0.5f * Time.deltaTime;
+            await Awaitable.NextFrameAsync();
+        }
+
+        CG.alpha = 0f;
 
         return true;
     }

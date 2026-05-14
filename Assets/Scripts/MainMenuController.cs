@@ -14,6 +14,8 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField] UIDocument SettingsUI;
 
+    [SerializeField] FadeBlack fade;
+
     private void Awake()
     {
         ui = GetComponent<UIDocument>().rootVisualElement;
@@ -31,9 +33,11 @@ public class MainMenuController : MonoBehaviour
         ExitButton.clicked += OnExitButtonClicked;
     }
 
-    void OnStoryButtonClicked()
+    void OnStoryButtonClicked() 
     {
-        SceneManager.LoadScene("MainScene");
+        print("FADING");
+        fade = GameObject.Find("Black").GetComponent<FadeBlack>();
+        fade.FadeIn("MainScene");
     }
 
     void OnSettingsButtonClicked()

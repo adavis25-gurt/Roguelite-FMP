@@ -1,6 +1,4 @@
 using System.Collections;
-using Unity.Mathematics;
-using UnityEditor.TerrainTools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
