@@ -13,7 +13,9 @@ public class Loader : MonoBehaviour
     float color = 0;
 
     public static Loader Instance { get; private set; }
-    
+
+    public int timesInRoom;
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -69,6 +71,13 @@ public class Loader : MonoBehaviour
         print(TerrainGeneratorScript.GetGridElement(TerrainGeneratorScript.mapSize / 2, TerrainGeneratorScript.mapSize / 2));
         player.transform.position = Position;
         player.transform.gameObject.SetActive(true);
+
+        if (timesInRoom >= 6)
+        {
+            var spawner = GameObject.Find("Spawner");
+            spawner.SetActive(false);
+            Instantiate()
+        }
     }
 
 }
