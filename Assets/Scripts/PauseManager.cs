@@ -18,6 +18,7 @@ public class PauseManager : MonoBehaviour
 
     void OnPause(InputAction.CallbackContext context)
     {
+        print("SUPPOSED TO BE PAUSING BTW");
         if (pauseUi == null)
         {
             pauseUi = GameObject.Find("PauseUI").GetComponent<UIDocument>();

@@ -48,6 +48,9 @@ public class Loader : MonoBehaviour
             greyscaleMain = GameObject.Find("RawImage").GetComponent<RawImage>().material;
             greyscaleMain.SetFloat("_ColorAmount", color);
             playerstatsmanager.GetComponent<PlayerStatsManager>().canTakeDamage = true;
+            var CG = GameObject.Find("FadeBlack").GetComponent<CanvasGroup>();
+            var fade = GameObject.Find("FadeBlack").GetComponent<FadeBlack>();
+            fade.FadeOut();
             StartCoroutine(LateStart(0.1f));
         }
         else if (scene.name == "TherapyRoom")
@@ -56,6 +59,9 @@ public class Loader : MonoBehaviour
             greyscaleTherapyRoom = GameObject.Find("BlackAndWhite").GetComponent<RawImage>().material;
             greyscaleTherapyRoom.SetFloat("_ColorAmount", color);
             print(greyscaleMain.GetFloat("_ColorAmount"));
+            var CG = GameObject.FindAnyObjectByType<CanvasGroup>();
+            var fade = GameObject.Find("FadeBlack").GetComponent<FadeBlack>();
+            fade.FadeOut();
         }
 
         print(scene.name);

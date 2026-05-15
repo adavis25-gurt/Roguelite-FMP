@@ -418,6 +418,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CG: {fileID: 1880230924}
+--- !u!1001 &1318883348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.6248322
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.8016338
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6757717
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731849279250889211, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360436144966181697, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
+      propertyPath: m_Name
+      value: THERSAPYYY
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91f79e0652ae7804dbc5cea3f85aeba3, type: 3}
 --- !u!1 &1649261806
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +486,7 @@ GameObject:
   - component: {fileID: 1649261809}
   - component: {fileID: 1649261808}
   - component: {fileID: 1649261807}
+  - component: {fileID: 1649261810}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -503,13 +561,57 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649261806}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.08079209, y: -0.2173507, z: 0.0005459195, w: 0.9727441}
+  m_LocalPosition: {x: -6.72, y: 7.14, z: -1.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.057, y: -25.347, z: -1.976}
+--- !u!114 &1649261810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649261806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &1799468206
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,3 +858,4 @@ SceneRoots:
   - {fileID: 518043424}
   - {fileID: 1880230928}
   - {fileID: 797207752}
+  - {fileID: 1318883348}

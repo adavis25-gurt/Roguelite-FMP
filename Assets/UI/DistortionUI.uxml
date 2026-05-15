@@ -1,12 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=7e9640eea530e744c933ac2b536db794&amp;type=3#MainMenu" />
-    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1;">
-        <ui:VisualElement name="Container" class="menu" style="flex-grow: 1; background-color: rgb(31, 31, 31); width: 578px; align-items: stretch;">
-            <ui:Button text="Story Mode" name="StoryButton" class="unity-button" style="-unity-font-style: bold; border-top-left-radius: 60px; border-top-right-radius: 60px;" />
-            <ui:Button text="Settings" name="SettingsButton" class="unity-button" style="-unity-font-style: bold;" />
-            <ui:Button text="Exit" name="ExitButton" class="unity-button" style="-unity-font-style: bold; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;" />
-            <ui:Label text="DISTORTION&#10;" name="Title" style="color: rgb(29, 158, 188); -unity-text-align: upper-center; font-size: 125px; translate: 0 -463px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
-            <ui:Label text="Thanks for playing!" name="BottomTitle" style="color: rgb(23, 102, 140); -unity-text-align: upper-center; font-size: 60px; translate: 0 316px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
-        </ui:VisualElement>
+    <ui:VisualElement name="Container" class="menu" style="flex-grow: 1; background-color: rgb(31, 31, 31); width: 578px; align-items: stretch;">
+        <ui:Button text="Story Mode" name="StoryButton" class="unity-button" style="-unity-font-style: bold; border-top-left-radius: 60px; border-top-right-radius: 60px;" />
+        <ui:Button text="Settings" name="SettingsButton" class="unity-button" style="-unity-font-style: bold;" />
+        <ui:Button text="Exit" name="ExitButton" class="unity-button" style="-unity-font-style: bold; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;" />
+        <ui:Label text="DISTORTION&#10;" name="Title" style="color: rgb(29, 158, 188); -unity-text-align: upper-center; font-size: 125px; translate: 0 -463px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+        <ui:Label text="Thanks for playing!" name="BottomTitle" style="color: rgb(23, 102, 140); -unity-text-align: upper-center; font-size: 60px; translate: 0 316px; -unity-font-definition: url(&quot;project://database/Assets/Fonts/munro-small.ttf?fileID=12800000&amp;guid=b6db1521497d36546be41a6c0a53da86&amp;type=3#munro-small&quot;); margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
     </ui:VisualElement>
 </ui:UXML>

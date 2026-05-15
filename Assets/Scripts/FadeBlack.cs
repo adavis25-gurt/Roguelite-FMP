@@ -10,7 +10,7 @@ public class FadeBlack : MonoBehaviour
     public async void FadeIn(string sceneName)
     {
         Time.timeScale = 1f;
-        CG = GameObject.Find("Canvas").GetComponent<CanvasGroup>();
+        var CG = GameObject.Find("Canvas").GetComponent<CanvasGroup>();
         print(CG.transform.parent);
 
         while (CG.alpha < 1f)
@@ -26,16 +26,20 @@ public class FadeBlack : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public async Task<bool> FadeOut()
+    public async void FadeOut()
     {
-        while (CG.alpha > 1f)
+        Time.timeScale = 1f;
+        var CG = GameObject.Find("Canvas").GetComponent<CanvasGroup>();
+        print(CG.transform.parent);
+
+        while (CG.alpha >= 1f && !(CG.alpha < 0.001f))
         {
-            CG.alpha -= 0.5f * Time.deltaTime;
+            print(CG.alpha);
+            CG.alpha -= 0.75f * Time.deltaTime;
             await Awaitable.NextFrameAsync();
+            print(Time.timeScale);
         }
 
-        CG.alpha = 0f;
-
-        return true;
+        CG.alpha = 0.001f;
     }
 }
