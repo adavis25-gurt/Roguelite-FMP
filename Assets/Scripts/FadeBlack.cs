@@ -15,7 +15,7 @@ public class FadeBlack : MonoBehaviour
         while (CG.alpha < 1f)
         {
             print(CG.alpha);
-            CG.alpha *= 0.75f * Time.deltaTime;
+            CG.alpha += 0.75f * Time.deltaTime;
             await Awaitable.NextFrameAsync();
             print("ITS SUPPOSED TO WORK");
         }
