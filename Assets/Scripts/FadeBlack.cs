@@ -9,6 +9,7 @@ public class FadeBlack : MonoBehaviour
 
     public async void FadeIn(string sceneName)
     {
+        Time.timeScale = 1f;
         CG = GameObject.Find("Canvas").GetComponent<CanvasGroup>();
         print(CG.transform.parent);
 
@@ -17,7 +18,7 @@ public class FadeBlack : MonoBehaviour
             print(CG.alpha);
             CG.alpha += 0.75f * Time.deltaTime;
             await Awaitable.NextFrameAsync();
-            print("ITS SUPPOSED TO WORK");
+            print(Time.timeScale);
         }
 
         CG.alpha = 1f;

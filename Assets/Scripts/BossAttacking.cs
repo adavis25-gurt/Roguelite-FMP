@@ -3,18 +3,18 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class EnemyAttacking : MonoBehaviour
+public class BossAttacking : MonoBehaviour
 {
     [SerializeField] GameObject playerObj;
 
     Animator animator;
-    EnemyStats stats;
+    BossStats stats;
     bool paused = false;
 
     void Awake()
     {
         playerObj = GameObject.Find("Player");
-        stats = GetComponent<EnemyStats>();
+        stats = GetComponent<BossStats>();
         animator = GetComponent<Animator>();
     }
 

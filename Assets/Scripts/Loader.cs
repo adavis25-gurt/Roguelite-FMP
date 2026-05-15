@@ -11,10 +11,10 @@ public class Loader : MonoBehaviour
     public Material greyscaleTherapyRoom;
 
     float color = 0;
+    public GameObject bossPrefab;
 
     public static Loader Instance { get; private set; }
 
-    public int timesInRoom;
 
     private void OnEnable()
     {
@@ -72,11 +72,11 @@ public class Loader : MonoBehaviour
         player.transform.position = Position;
         player.transform.gameObject.SetActive(true);
 
-        if (timesInRoom >= 6)
+        if (PlayerStatsManager.Instance.timesInTherapyRoom >= 6)
         {
             var spawner = GameObject.Find("Spawner");
             spawner.SetActive(false);
-            Instantiate()
+            Instantiate(bossPrefab, Position + (Vector3.right * 5), Quaternion.identity);
         }
     }
 
