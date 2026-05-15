@@ -1,11 +1,15 @@
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TerrainGenerator : MonoBehaviour
 {
     [SerializeField] TerrainObjectSpawner terrainObjectSpawner;
     [SerializeField] GridElement blockPrefab;
     [SerializeField] GameObject wallPrefab;
+    [SerializeField] NavMeshSurface navMeshSurface;
+    public UnityEvent OnNavMeshBaked;
 
     public int mapSize = 40;
     [Range(0, 1f)] [SerializeField] float hilliness = 0.5f;
@@ -34,6 +38,9 @@ public class TerrainGenerator : MonoBehaviour
             ExpandElement();
         }
         CreateWalls();
+
+        navMeshSurface.BuildNavMesh();
+        OnNavMeshBaked.Invoke();
     }
 
     public GridElement GetGridElement(int x, int z)

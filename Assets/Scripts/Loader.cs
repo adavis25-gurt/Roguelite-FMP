@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Loader : MonoBehaviour
 {
     [SerializeField] GameObject player;
+    [SerializeField] GameObject bossPrefab;
 
     public Material greyscaleMain;
     public Material greyscaleTherapyRoom;
@@ -76,8 +77,13 @@ public class Loader : MonoBehaviour
         {
             var spawner = GameObject.Find("Spawner");
             spawner.SetActive(false);
-            Instantiate()
+            TerrainGeneratorScript.OnNavMeshBaked.AddListener(() => SpawnBoss(Position));
         }
+    }
+
+    void SpawnBoss(Vector3 position)
+    {
+        Instantiate(bossPrefab, position, Quaternion.identity);
     }
 
 }
