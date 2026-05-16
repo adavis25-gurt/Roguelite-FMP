@@ -18,7 +18,7 @@ public class FadeBlack : MonoBehaviour
             print(CG.alpha);
             CG.alpha += 0.75f * Time.deltaTime;
             await Awaitable.NextFrameAsync();   
-            print(Time.timeScale);
+            print(Time.timeScale);  
         }
 
         CG.alpha = 1f;
@@ -32,14 +32,14 @@ public class FadeBlack : MonoBehaviour
         var CG = GameObject.Find("FadeCanvas").GetComponent<CanvasGroup>();
         print(CG.transform.parent);
 
-        while (CG.alpha >= 1f && !(CG.alpha < 0.001f))
+        while (CG.alpha > 0f)
         {
             print(CG.alpha);
-            CG.alpha -= 0.75f * Time.deltaTime;
+            CG.alpha -= 0.25f * Time.deltaTime;
             await Awaitable.NextFrameAsync();
             print(Time.timeScale);
         }
 
-        CG.alpha = 0.001f;
+        CG.alpha = 0f;
     }
 }

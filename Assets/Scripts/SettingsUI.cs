@@ -106,6 +106,9 @@ public class SettingsController : MonoBehaviour
     {
         ui.Q<VisualElement>("Panel").AddToClassList("hide");
         PauseUi.rootVisualElement.Q<VisualElement>("Container").RemoveFromClassList("hide");
+        Time.timeScale = 1f;
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
     }
 
     void OnFullscreenToggled(ChangeEvent<bool> evt)
