@@ -48,9 +48,6 @@ public class Loader : MonoBehaviour
             greyscaleMain = GameObject.Find("RawImage").GetComponent<RawImage>().material;
             greyscaleMain.SetFloat("_ColorAmount", color);
             playerstatsmanager.GetComponent<PlayerStatsManager>().canTakeDamage = true;
-            var CG = GameObject.Find("FadeBlack").GetComponent<CanvasGroup>();
-            var fade = GameObject.Find("FadeBlack").GetComponent<FadeBlack>();
-            fade.FadeOut();
             StartCoroutine(LateStart(0.1f));
         }
         else if (scene.name == "TherapyRoom")
@@ -77,6 +74,8 @@ public class Loader : MonoBehaviour
         print(TerrainGeneratorScript.GetGridElement(TerrainGeneratorScript.mapSize / 2, TerrainGeneratorScript.mapSize / 2));
         player.transform.position = Position;
         player.transform.gameObject.SetActive(true);
+        var fade = GameObject.Find("FadeBlack").GetComponent<FadeBlack>();
+        fade.FadeOut();
 
         if (PlayerStatsManager.Instance.timesInTherapyRoom >= 6)
         {

@@ -111,9 +111,6 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsMoving", false);
         }
-
-        //print(animator.GetBool("IsMoving"));
-        print(IsGrounded());
     }
 
     void ApplyFallGravity()

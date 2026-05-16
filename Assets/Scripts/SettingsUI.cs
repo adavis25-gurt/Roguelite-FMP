@@ -105,7 +105,7 @@ public class SettingsController : MonoBehaviour
     void OnExitButtonClicked()
     {
         ui.Q<VisualElement>("Panel").AddToClassList("hide");
-        PauseUi.rootVisualElement.Q<VisualElement>("Panel").RemoveFromClassList("hide");
+        PauseUi.rootVisualElement.Q<VisualElement>("Container").RemoveFromClassList("hide");
     }
 
     void OnFullscreenToggled(ChangeEvent<bool> evt)

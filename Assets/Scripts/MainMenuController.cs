@@ -8,7 +8,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] VisualElement ui;
 
     [SerializeField] Button StoryButton;
-    [SerializeField] Button EndlessButton;
+    [SerializeField] Button TutorialButton;
     [SerializeField] Button SettingsButton;
     [SerializeField] Button ExitButton;
 
@@ -31,6 +31,9 @@ public class MainMenuController : MonoBehaviour
 
         ExitButton = ui.Q<Button>("ExitButton");
         ExitButton.clicked += OnExitButtonClicked;
+
+        TutorialButton  = ui.Q<Button>("TutorialButton");
+        TutorialButton.clicked += OnTutorialButtonClicked;
     }
 
     void OnStoryButtonClicked() 
@@ -40,9 +43,15 @@ public class MainMenuController : MonoBehaviour
         fade.FadeIn("MainScene");
     }
 
+    void OnTutorialButtonClicked()
+    {
+        fade = GameObject.Find("Black").GetComponent<FadeBlack>();
+        fade.FadeIn("Tutorial");
+    }
+
     void OnSettingsButtonClicked()
     {
-        var MainPanel = ui.Q<VisualElement>("Panel");
+        var MainPanel = ui.Q<VisualElement>("Container");
         var SettingsPanel = SettingsUI.rootVisualElement.Q<VisualElement>("Panel");
         if (SettingsPanel.ClassListContains("hide"))
         {
