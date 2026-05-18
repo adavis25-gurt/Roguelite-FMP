@@ -18,15 +18,16 @@ public class PlayerAttack : MonoBehaviour
     void Attack(GameObject enemy)
     {
         EnemyStats stats = enemy.GetComponent<EnemyStats>();
-        if (!stats) return;
-
+        BossStats boss = enemy.GetComponent<BossStats>();
+        if (!stats && !boss) return;
         float damage = weapon.data.baseDamage + PlayerStatsManager.Instance.attackDamage.GetValue();
 
         bool isCrit = Random.Range(0f, 100f) < PlayerStatsManager.Instance.CritChance.GetValue();
         if (isCrit)
             damage *= 1f + (PlayerStatsManager.Instance.CritDamage.GetValue() / 100f);
 
-        stats.TakeDamage(damage);
+        if (stats) stats.TakeDamage(damage);
+        else boss.TakeDamage(damage);
     }
 
     void Update()

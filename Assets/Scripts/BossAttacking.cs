@@ -24,7 +24,7 @@ public class BossAttacking : MonoBehaviour
         {
             float rand = Random.Range(0, 5f);
             float step = stats.speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position + Vector3.up * Time.deltaTime, (playerObj.transform.position + new Vector3(rand, 1f, rand)), step);
+            transform.position = Vector3.MoveTowards(transform.position + Vector3.up * Time.deltaTime, (playerObj.transform.position + new Vector3(0, 1f, 0)), step);
             transform.LookAt(playerObj.transform.position);
         }
     }

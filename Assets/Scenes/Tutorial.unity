@@ -106086,88 +106086,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368759713}
   m_Mesh: {fileID: -5495902117074765545, guid: 448bbf3f168377448b586a43665d1930, type: 3}
---- !u!1 &1369178669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1369178671}
-  - component: {fileID: 1369178670}
-  m_Layer: 0
-  m_Name: PlayerStats
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1369178670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369178669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3974c4f20095964ca086bea2a303488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerObj: {fileID: 0}
-  health:
-    baseValue: 100
-    currentValue: 100
-  attackDamage:
-    baseValue: 10
-    currentValue: 10
-  attackSpeed:
-    baseValue: 1
-    currentValue: 1
-  defense:
-    baseValue: 5
-    currentValue: 5
-  jumpPower:
-    baseValue: 8
-    currentValue: 8
-  moveSpeed:
-    baseValue: 16
-    currentValue: 16
-  jumpAmount:
-    baseValue: 1
-    currentValue: 1
-  expMultiplier:
-    baseValue: 1
-    currentValue: 1
-  CritChance:
-    baseValue: 2.5
-    currentValue: 2.5
-  CritDamage:
-    baseValue: 50
-    currentValue: 50
-  projectileCount:
-    baseValue: 1
-    currentValue: 1
-  currentHealth: 0
-  canTakeDamage: 1
-  coins: 0
-  timesInTherapyRoom: 0
---- !u!4 &1369178671
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369178669}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.54843, y: 27.50839, z: 310}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369435392
 GameObject:
   m_ObjectHideFlags: 0
@@ -116700,11 +116618,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1535774079}
-  - component: {fileID: 1535774078}
   - component: {fileID: 1535774077}
   - component: {fileID: 1535774076}
   - component: {fileID: 1535774075}
   - component: {fileID: 1535774080}
+  - component: {fileID: 1535774081}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -116792,26 +116710,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1535774078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535774072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6defe8af8593545aa65a1949e5e783, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  groundCheckRadius: 0.37
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  groundCheck: {fileID: 846848685}
-  orientation: {fileID: 1528224339}
-  fallMultiplier: 3
-  airControlMultiplier: 1
 --- !u!4 &1535774079
 Transform:
   m_ObjectHideFlags: 0
@@ -116842,6 +116740,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseUi: {fileID: 1806567495}
+--- !u!114 &1535774081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535774072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6944c100c216cc6469328d0b68861295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheckRadius: 0.3
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheck: {fileID: 846848685}
+  orientation: {fileID: 1528224339}
+  fallMultiplier: 3
+  airControlMultiplier: 0.1
 --- !u!1 &1537232609
 GameObject:
   m_ObjectHideFlags: 0
@@ -160497,7 +160415,6 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1369178671}
   - {fileID: 1806567497}
   - {fileID: 1860154438}
   - {fileID: 330585546}
