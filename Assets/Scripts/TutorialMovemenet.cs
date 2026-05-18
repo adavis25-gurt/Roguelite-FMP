@@ -41,7 +41,7 @@ public class TutorialMovemenet : MonoBehaviour
     {
         if (jumpsRemaining <= 0) return;
         playerRigidbody.linearVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0f, playerRigidbody.linearVelocity.z);
-        playerRigidbody.AddForce(Vector3.up * PlayerStatsManager.Instance.jumpPower.GetValue(), ForceMode.Impulse);
+        playerRigidbody.AddForce(Vector3.up * 10f, ForceMode.Impulse);
         jumpsRemaining--;
     }
 
@@ -68,7 +68,7 @@ public class TutorialMovemenet : MonoBehaviour
     {
         if (IsGrounded())
         {
-            jumpsRemaining = Mathf.RoundToInt(PlayerStatsManager.Instance.jumpAmount.GetValue());
+            jumpsRemaining = 1;
         }
     }
 
@@ -80,7 +80,7 @@ public class TutorialMovemenet : MonoBehaviour
 
         if (IsGrounded())
         {
-            Vector3 newVelocity = move.normalized * PlayerStatsManager.Instance.moveSpeed.GetValue();
+            Vector3 newVelocity = move.normalized * 10f;
             newVelocity.y = playerRigidbody.linearVelocity.y;
             playerRigidbody.linearVelocity = newVelocity;
             animator.SetBool("IsMoving", true);
@@ -88,11 +88,11 @@ public class TutorialMovemenet : MonoBehaviour
         else
         {
             Vector3 horizontalVelocity = new Vector3(playerRigidbody.linearVelocity.x, 0f, playerRigidbody.linearVelocity.z);
-            float airSpeedCap = PlayerStatsManager.Instance.moveSpeed.GetValue() * airControlMultiplier;
+            float airSpeedCap =  airControlMultiplier;
 
             if (horizontalVelocity.magnitude < airSpeedCap)
             {
-                playerRigidbody.AddForce(move.normalized * PlayerStatsManager.Instance.moveSpeed.GetValue() * airControlMultiplier, ForceMode.VelocityChange);
+                playerRigidbody.AddForce(move.normalized * 5f * airControlMultiplier, ForceMode.VelocityChange);
             }
         }
 
